@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition-duration: 0.4s;
+}
+
+/* HEADER SECTION */
+
+header{
+    background-color: beige;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 96%;
+    width: 100%;
+    padding: 2%;
+    margin: 2%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+
+}
+
+.logo h1{
+    font-family:'Times New Roman', Times, serif;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    font-size: 1.3rem;
+}
+nav a{
+    text-decoration: none;
+}
+
+.book-now{
+    padding: 0.5rem 1.5rem;
+    border: 1px solid; /*add color later as per theme*/
+    text-decoration: none;
+    color: black;
+}
+.book-now:hover{
+    color: beige;
+    background-color: black;
+}
+
+/* TOP BANNER */
+
+.top-banner{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+
+    /*add a bg image later*/
+}
+
+.btn{
+    padding: 1rem 2rem;
+    border: 1px solid; /*add color later as per theme*/
+    text-decoration: none;
+    color: black;
+}
+.btn:hover{
+    color: beige;
+    background-color: black;
+}
+
+/* OVERVIEW SECTION */
+
+.overview-section{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 2%;
+
+}
+.overview-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    gap: 1%;
+    padding: 2%;
+}
+
+.image-section{
+    display: flex;
+    flex-direction: row;
+    padding: 3%;
+    gap: 2%;
+    border: 1px solid;
+    border-radius: 25px;
+
+    background-color: rgba(255, 255, 255, 0.15);
+    z-index: 100;
+}
+
+.image-section:hover{
+    transform: scale(1.02);
+}
+
+.image-section img{
+    width: 40%;
+    border-radius: 10px;
+}
+
+/* FOOTER SECTION */
+
+footer{
+    background-color: beige;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+
+
+}
+
+footer a{
+    margin: 0 0.5rem;
+    text-decoration: none;
+}
