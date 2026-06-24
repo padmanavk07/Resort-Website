@@ -3,77 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resort Website</title>
+    <title>Aura | Luxury Resort & Spa</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header>
-       <div class="logo">
-            <h1>Resort Name</h1>
-       </div>
-       <nav>
-            <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">SERVICES</a></li>
-                <li><a href="#">PRICING</a></li>
+    <header id="header">
+        <div class="nav-container">
+            <a href="#" class="logo">RESORT NAME</a>
+            <ul class="nav-links">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#">ABOUT US</a></li>
+                <li><a href="#services">SERVICES</a></li>
                 <li><a href="#">GALLERY</a></li>
                 <li><a href="#">REVIEWS</a></li>
-                <li><a href="#">CONTACT</a></li>
+                <li><a href="#">CAREERS</a></li>
+                <li><a href="#">PACKAGES</a></li>
             </ul>
-       </nav>
-       <a href="#" class="book-now">BOOK NOW</a>
+            <a href="#book" class="btn btn-gold">BOOK NOW</a>
+            <h1 class="triple-bar">≡</h1>
+        </div>
     </header>
 
     <main>
-        <section class="top-banner">
-            <h1>TEXT</h1>
-            <p>TEXT</p>
-            <a href="#" class="btn">RESERVE NOW</a>
+        <section id="home" class="hero">
+            <div class="hero-slides">
+                <div class="slide active" style="background-image: url('images/slide-image-1.jpg');"></div>
+                <div class="slide" style="background-image: url('images/slide-image-2.jpg');"></div>
+                <div class="slide" style="background-image: url('images/slide-image-3.jpg');"></div>
+            </div>
+            
+            <div class="hero-content fade-up">
+                <h1>RESORT NAME</h1>
+                <p>"Resort's motto/tagline"</p>
+                <div class="hero-btns">
+                    <a href="#services" class="btn btn-gold">EXPLORE RESORT</a>
+                    <a href="#book" class="btn btn-outline">BOOK YOUR STAY</a>
+                </div>
+            </div>
+            
+            <a href="#about" class="scroll-arrow">⌄</a>
         </section>
 
-        <section class="overview-section">
-            <div class="overview-container">
-
-                <div class="image-section">
-                    <img src="images/monogram-care.jpeg">
-                    <div class="image-section-text">
-                        <h1>TEXT</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam molestias dicta esse officia. Aspernatur aperiam esse voluptate placeat, distinctio repudiandae, amet ab architecto hic, similique quae facere ea minus eum.</p>
+        <section id="about" class="highlights">
+            <div class="container">
+                <h2 class="section-title fade-up">Why Choose Us</h2>
+                <p class="section-subtitle fade-up">Discover a sanctuary of unparalleled luxury, where every detail is meticulously crafted to ensure an extraordinary escape.</p>
+                
+                <div class="grid-cards">
+                    <div class="card fade-up">
+                        <h3>Oceanfront Villas</h3>
+                        <p>Wake up to panoramic ocean views and step directly onto pristine white sands from your private terrace.</p>
+                    </div>
+                    <div class="card fade-up">
+                        <h3>Fine Dining</h3>
+                        <p>Indulge in Michelin-star quality culinary masterpieces created by our world-renowned executive chefs.</p>
+                    </div>
+                    <div class="card fade-up">
+                        <h3>Spa & Wellness</h3>
+                        <p>Rejuvenate your mind and body with holistic treatments inspired by ancient coastal wellness traditions.</p>
+                    </div>
+                    <div class="card fade-up">
+                        <h3>Infinity Pools</h3>
+                        <p>Relax in our temperature-controlled infinity pools that seamlessly blend into the horizon.</p>
+                    </div>
+                    <div class="card fade-up">
+                        <h3>Private Yacht</h3>
+                        <p>Charter our exclusive resort yacht for sunset cruises or secluded island hopping adventures.</p>
+                    </div>
+                    <div class="card fade-up">
+                        <h3>Bespoke Events</h3>
+                        <p>Host unforgettable weddings and private galas in our breathtaking oceanfront venues.</p>
                     </div>
                 </div>
-
-                <div class="image-section">
-                    <div class="image-section-text">
-                        <h1>TEXT</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam molestias dicta esse officia. Aspernatur aperiam esse voluptate placeat, distinctio repudiandae, amet ab architecto hic, similique quae facere ea minus eum.</p>
-                    </div>
-                    <img src="images/monogram-care.jpeg">
-                </div>
-
-                <div class="image-section">
-                    <img src="images/monogram-care.jpeg">
-                    <div class="image-section-text">
-                        <h1>TEXT</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam molestias dicta esse officia. Aspernatur aperiam esse voluptate placeat, distinctio repudiandae, amet ab architecto hic, similique quae facere ea minus eum.</p>
-                    </div>
-                </div>
-
             </div>
         </section>
+
+        <section id="services" style="background-color: var(--black);">
+            <div class="container">
+                <h2 class="section-title fade-up">Curated Services</h2>
+                <p class="section-subtitle fade-up">Moments designed exclusively for our guests, creating memories that last a lifetime.</p>
+                
+                <div class="services-wrap">
+                    <div class="services-row fade-up">
+                        <div class="services-image">
+                            <img src="images/sample.jpeg" alt="Couples Retreat">
+                        </div>
+                        <div class="services-content">
+                            <h3>Couples Retreats</h3>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque saepe esse voluptates dignissimos distinctio corporis pariatur, iste delectus quas numquam officiis odio quos omnis eligendi possimus ullam dolorem necessitatibus perspiciatis?</p>
+                            <a href="#" class="btn btn-outline">DISCOVER MORE</a>
+                        </div>
+                    </div>
+                    
+                    <div class="services-row fade-up">
+                        <div class="services-image">
+                            <img src="images/sample.jpeg" alt="Gourmet Dining">
+                        </div>
+                        <div class="services-content">
+                            <h3>Gourmet Dining</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam assumenda cum officia esse praesentium nam, iure consequatur vel repellat dicta error nobis? Quibusdam repudiandae iusto et quae sunt. Officia, expedita?</p>
+                            <a href="#" class="btn btn-outline">RESERVE A TABLE</a>
+                        </div>
+                    </div>
+                    
+                    <div class="services-row fade-up">
+                        <div class="services-image">
+                            <img src="images/sample.jpeg" alt="Private Beach">
+                        </div>
+                        <div class="services-content">
+                            <h3>Private Beach Access</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad aspernatur quidem omnis rerum aliquid sapiente, laboriosam perferendis amet voluptates aut. Sunt, facilis totam? Soluta, ad cupiditate dignissimos hic nostrum in.</p>
+                            <a href="#" class="btn btn-outline">VIEW BEACH VILLAS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="membership">
+                <div class="membership-box fade-up">                   
+                    <div class="member-card">
+                        <h3>Member Login</h3>
+                        <p style="margin-bottom: 2rem;">Welcome back. Access your personalized dashboard and exclusive offers.</p>
+                        <form action="#">
+                            <input type="email" id="signin-email" placeholder="Email Address" required>
+                            <input type="password" id="signin-password" placeholder="Password" required>
+                            <button type="submit" class="btn btn-outline">Sign In</button>
+                            <button type="button" class="btn btn-gold">Sign Up</button>
+                        </form>
+                    </div>
+                </div>
+        </section>
+
     </main>
 
+
+
     <footer>
-        <div class="footer-info">
-            <p>&copy 2026 RESORT NAME. All Rights Reserved.</p>
-        </div>
-        <div class="media-links">
-            <a href="#">FACEBOOK</a>
-            <a href="#">INSTAGRAM</a>
-            <a href="#">TWITTER</a>
+        <div class="container" style="padding-bottom: 0;">
+            <div class="footer-grid fade-up">
+                <div class="footer-col">
+                    <a href="#" class="footer-logo serif">Resort Name</a>
+                    <p style="color: var(--text-light); margin-bottom: 1rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem rem, ut repellendus eligendi itaque sequi tempore! Repudiandae natus deserunt sed quasi eius, facere culpa, velit vitae repellendus ipsum voluptates rerum.</p>
+                    <div class="social-links">
+                        <a href="#">FACEBOOK</i></a>
+                        <a href="#">INSTAGRAM</i></a>
+                        <a href="#">YOUTUBE</i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>The Resort</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Resort Map</a></li>
+                    </ul>
+                </div>
+                                
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul style="color: var(--text-light);">
+                        <li><b>✈</b>ADDRESS</li>
+                        <li><b>☏</b>NUMBER</li>    <!-- to be added later -->
+                        <li><b>✉</b>EMAIL</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Resort Name. All Rights Reserved. | <a href="#" style="color: goldenrod;">Privacy Policy</a> | <a href="#" style="color: goldenrod;">Terms of Service</a></p>
+            </div>
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
