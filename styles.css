@@ -228,14 +228,6 @@ header {
     position: relative;
     overflow: hidden;
 }
-/* .card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: radial-gradient(circle at center, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
-    opacity: 0;
-    transition: var(--transition);
-} */
 .card:hover {
     transform: translateY(-10px);
     border-color: goldenrod;
@@ -334,17 +326,6 @@ form button {
     margin: 0.5rem;
 }
 
-
-/* .form-group input:focus,
-.form-group input:not(:placeholder-shown) {
-    border-bottom-color: var(--gold);
-}
-.form-group input:focus + label,
-.form-group input:not(:placeholder-shown) + label {
-    top: -15px;
-    font-size: 0.8rem;
-    color: var(--gold);
-} */
 /* Footer */
 footer {
     background-color: var(--navy-blue-shade);
