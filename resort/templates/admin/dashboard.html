@@ -1,16 +1,239 @@
-{% extends 'base.html' %}
-{% block title %}Admin Dashboard{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
 
-{% block content %}
-    <main>
-        <section id="profile" class="auth-section">
-            <div class="container">
-                <h2 class="section-title fade-up">Admin Dashboard</h2>
-                
-                <div class="auth-card fade-up">
-                    <a href="{{ url_for('auth.logout') }}" class="btn btn-outline">Logout</a>
+<body>
+    <div class="admin-sidebar">
+        <div class="admin-brand">
+            <div class="logo serif">Resort Name</div>
+            <p>Admin Portal</p>
+        </div>
+        
+        <nav class="admin-nav">
+            <a href="#" class="admin-nav-item active" data-target="overview" data-title="Dashboard Overview">
+                Dashboard Overview
+            </a>
+            <a href="#" class="admin-nav-item" data-target="bookings" data-title="Booking Management">
+                Booking Management
+            </a>
+            <a href="#" class="admin-nav-item" data-target="payments" data-title="Payments">
+                Payments
+            </a>
+            <a href="#" class="admin-nav-item" data-target="services" data-title="Services & Activities">
+                Services & Activities
+            </a>
+            <a href="#" class="admin-nav-item" data-target="memberships" data-title="Memberships">
+                Memberships
+            </a>
+            <a href="#" class="admin-nav-item" data-target="staff" data-title="Staff Applications">
+                Staff Applications
+            </a>
+        </nav>
+
+    </div>
+
+    <main class="admin-main">
+        
+        <header class="admin-header">
+            <div class="header-title">
+                <h1 id="header-title-text" class="serif">Dashboard Overview</h1>
+            </div>
+            <div class="header-controls">
+                <div class="date-selector">
+                    <i class="far fa-calendar-alt"></i>
+                    <input type="date" id="admin-date">
                 </div>
             </div>
-        </section>
+        </header>
+
+        <!-- Dynamic Content Container -->
+        <div class="admin-content">
+            
+            <section id="overview" class="dashboard-section active">
+                <div class="stats-card-grid">
+                    <div class="stats-card">
+                        <div class="stats-info"><h3>142</h3><p>Active Guests</p></div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stats-info"><h3>$50,000</h3><p>Today's Revenue</p></div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stats-info"><h3>5</h3><p>Pending Staff Apps</p></div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stats-info"><h3>24</h3><p>Service Appointments</p></div>
+                    </div>
+                </div>
+                
+                <div class="table-container">
+                    <div class="table-header"><h2>Recent Resort Activity</h2></div>
+                    <table>
+                        <tr><td>10 mins ago</td><td>New Booking: Oceanfront Villa (2 Nights)</td></tr>
+                        <tr><td>45 mins ago</td><td>Spa Reservation: Couples Massage</td></tr>
+                        <tr><td>1 hour ago</td><td>New Staff Application: Receptionist</td></tr>
+                    </table>
+                </div>
+            </section>
+
+            <section id="bookings" class="dashboard-section">
+                <div class="table-container">
+                    <div class="table-header"><h2>Arrivals & Departures</h2></div>
+                    <table>
+                        <thead>
+                            <tr><th>Booking ID</th><th>Guest Name</th><th>Room Type & No.</th><th>Check-in / Out</th><th>Status</th><th>Action</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="color: goldenrod; font-family: monospace;">#A-1001</td>
+                                <td>NAME</td>
+                                <td>Oceanfront Villa <br><small style="color: ivory;">Room 402</small></td>
+                                <td>Today, 2:00 PM <br><small style="color: ivory;">5 Nights</small></td>
+                                <td><span class="badge gold" id="status-1">Awaiting</span></td>
+                                <td><button class="btn-action" id="btn-1" onclick="checkInGuest(1)">Check In</button></td>
+                            </tr>
+                            <tr>
+                                <td style="color: goldenrod; font-family: monospace;">#A-1002</td>
+                                <td>NAME</td>
+                                <td>Honeymoon Retreat <br><small style="color: ivory;">Room 510</small></td>
+                                <td>Today, 3:00 PM <br><small style="color: ivory;">7 Nights</small></td>
+                                <td><span class="badge gold" id="status-2">Awaiting</span></td>
+                                <td><button class="btn-action" id="btn-2" onclick="checkInGuest(2)">Check In</button></td>
+                            </tr>
+                            <tr>
+                                <td style="color: goldenrod; font-family: monospace;">#A-1003</td>
+                                <td>NAME</td>
+                                <td>Family Suite <br><small style="color: ivory;">Room 214</small></td>
+                                <td>Today, 11:30 AM <br><small style="color: ivory;">2 Nights</small></td>
+                                <td><span class="badge green" id="status-3">Checked In</span></td>
+                                <td><button class="btn-action disabled" id="btn-3" disabled>Checked In</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="payments" class="dashboard-section">
+                <div class="table-container">
+                    <div class="table-header"><h2>Recent Transactions</h2></div>
+                    <table>
+                        <thead>
+                            <tr><th>Txn ID</th><th>Booking ID</th><th>Amount</th><th>Method</th><th>Status</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td style="font-family: monospace;">TX-12345</td><td>#A-1001</td><td>$3,500</td><td>Credit Card</td><td><span class="badge green">Paid</span></td></tr>
+                            <tr><td style="font-family: monospace;">TX-12346</td><td>#A-1002</td><td>$6,000</td><td>UPI</td><td><span class="badge gold">Pending</span></td></tr>
+                            <tr><td style="font-family: monospace;">TX-12347</td><td>#A-1003</td><td>$2,500</td><td>UPI</td><td><span class="badge green">Paid</span></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="services" class="dashboard-section">
+                <div class="stats-card-grid">
+                    <div class="stats-card">
+                        <div class="stats-info"><h3>8</h3><p>Spa Bookings Today</p></div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stats-info"><h3>45</h3><p>Dinner Reservations</p></div>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <div class="table-header"><h2>Today's Service List</h2></div>
+                    <table>
+                        <thead>
+                            <tr><th>Time</th><th>Service Type</th><th>Guest</th><th>Location</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>4:00 PM</td><td>Couples Massage</td><td>Name</td><td>Sanctuary Spa Room 2</td></tr>
+                            <tr><td>7:30 PM</td><td>Private Beach Dinner</td><td>Name</td><td>South Beach Lounge</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 5. MEMBERSHIPS SECTION -->
+            <section id="memberships" class="dashboard-section">
+                <div class="table-container">
+                    <div class="table-header"><h2>Pending Club Applications</h2></div>
+                    <table>
+                        <thead>
+                            <tr><th>Applicant Name</th><th>Email</th><th>Action</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Padmanav K</td><td>name@email.com</td>
+                                <td style="display: flex; gap: 10px;">
+                                    <button class="btn-action approve" onclick="this.innerText='Approved'; this.classList.add('disabled');">Approve</button>
+                                    <button class="btn-action" style="border-color: #e74c3c; color: #e74c3c;" onclick="this.closest('tr').style.display='none';">Reject</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Om Sai</td><td>name@email.com</td>
+                                <td style="display: flex; gap: 10px;">
+                                    <button class="btn-action approve" onclick="this.innerText='Approved'; this.classList.add('disabled');">Approve</button>
+                                    <button class="btn-action" style="border-color: #e74c3c; color: #e74c3c;" onclick="this.closest('tr').style.display='none';">Reject</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 6. STAFF APPLICATIONS SECTION (New) -->
+            <section id="staff" class="dashboard-section">
+                <div class="table-container">
+                    <div class="table-header"><h2>Review Staff Applications</h2></div>
+                    <table>
+                        <thead>
+                            <tr><th>Application ID</th><th>Applicant Name</th><th>Position Applied</th><th>Date Applied</th><th>Resume</th><th>Action</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#1234</td>
+                                <td>Name</td>
+                                <td>Executive Chef</td>
+                                <td>Jul 23, 2026</td>
+                                <td><a href="#" target="_blank" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">View Resume</a></td>
+                                <td style="display: flex; gap: 10px;">
+                                    <button class="btn-action approve" onclick="this.innerText='Hired'; this.classList.add('disabled');">Accept</button>
+                                    <button class="btn-action" style="border-color: #e74c3c; color: #e74c3c;" onclick="this.closest('tr').style.display='none';">Reject</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#1235</td>
+                                <td>Name</td>
+                                <td>Spa Therapist</td>
+                                <td>Jul 24, 2026</td>
+                                <td><a href="#" target="_blank" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">View Resume</a></td>
+                                <td style="display: flex; gap: 10px;">
+                                    <button class="btn-action approve" onclick="this.innerText='Hired'; this.classList.add('disabled');">Accept</button>
+                                    <button class="btn-action" style="border-color: #e74c3c; color: #e74c3c;" onclick="this.closest('tr').style.display='none';">Reject</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#1236</td>
+                                <td>Name</td>
+                                <td>Receptionist</td>
+                                <td>Jul 24, 2026</td>
+                                <td><a href="#" target="_blank" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">View Resume</a></td>
+                                <td style="display: flex; gap: 10px;">
+                                    <button class="btn-action approve" onclick="this.innerText='Hired'; this.classList.add('disabled');">Accept</button>
+                                    <button class="btn-action" style="border-color: #e74c3c; color: #e74c3c;" onclick="this.closest('tr').style.display='none';">Reject</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </div>
     </main>
-{% endblock %}
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
