@@ -151,10 +151,11 @@ header {
 /* Side bar for mobile */
 .side-bar {
     position: fixed;
-    top: 0; right: 0;
-    width: 300px;
+    top: 0; right: -250px;
+    width: 250px;
     height: 100vh;
-    background-color: rgb(5, 5, 48);
+    background-color: #0a1128b0;
+    backdrop-filter: blur(10px);
     transition: right 0.4s ease-in-out;
     z-index: 2000;
     padding: 2rem;

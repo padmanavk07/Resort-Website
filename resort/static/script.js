@@ -37,7 +37,7 @@ function showSidebar() {
 }
 function hideSidebar() {
     const sidebar = document.querySelector('.side-bar');
-    sidebar.style.right = "-300px";
+    sidebar.style.right = "-250px";
 }
 
 // For admin page

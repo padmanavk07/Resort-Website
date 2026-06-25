@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+{% block title %}Luxury Resort{% endblock %}
+{% block content %}
+    <div class="page-header">
+        <h1 class="serif">Reserve Your Stay</h1>
+    </div>
+
+    <form id="bookingForm" class="booking-container">
+        
+        <div class="booking-steps">
+            
+            <section class="step-section">
+                <div class="step-header">
+                    <h2 class="serif">Select Accommodation</h2>
+                </div>
+                
+                <div class="room-select-card selected" data-room="Oceanfront Villa" data-price="1200">
+                    <div class="room-img"><img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Villa"></div>
+                    <div class="room-details">
+                        <h3 class="serif">Oceanfront Villa</h3>
+                        <p>Total privacy with sweeping ocean views, personal plunge pool, and dedicated butler.</p>
+                        <div class="room-price-row">
+                            <span class="price">$1,200 <span style="font-size:0.8rem; font-family:Poppins, sans-serif; color:ivory;">/ night</span></span>
+                            <button type="button" class="btn-select">Selected</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-select-card" data-room="Premium Suite" data-price="1000">
+                    <div class="room-img"><img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Suite"></div>
+                    <div class="room-details">
+                        <h3 class="serif">Premium Suite</h3>
+                        <p>Spacious living areas featuring a wraparound balcony and deep soaking tub.</p>
+                        <div class="room-price-row">
+                            <span class="price">$1000 <span style="font-size:0.8rem; font-family:Poppins, sans-serif; color:ivory;">/ night</span></span>
+                            <button type="button" class="btn-select">Select Room</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-select-card" data-room="Honeymoon Retreat" data-price="800">
+                    <div class="room-img"><img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Honeymoon Suite"></div>
+                    <div class="room-details">
+                        <h3 class="serif">Honeymoon Retreat</h3>
+                        <p>Romantic design with aesthetic views, perfect for a couple's personal space.</p>
+                        <div class="room-price-row">
+                            <span class="price">$800 <span style="font-size:0.8rem; font-family:Poppins, sans-serif; color:ivory;">/ night</span></span>
+                            <button type="button" class="btn-select">Select Room</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="step-section">
+                <div class="step-header">
+                    <h2 class="serif">Dates & Guests</h2>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Check-in</label>
+                        <input type="date" id="checkin" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Check-out</label>
+                        <input type="date" id="checkout" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Adults</label>
+                        <select id="adults" class="form-control">
+                            <option value="1">1 Adult</option>
+                            <option value="2" selected>2 Adults</option>
+                            <option value="3">3 Adults</option>
+                            <option value="4">4 Adults</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Children</label>
+                        <select id="children" class="form-control">
+                            <option value="0" selected>0 Children</option>
+                            <option value="1">1 Child</option>
+                            <option value="2">2 Children</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <section class="step-section">
+                <div class="step-header">
+                    <h2 class="serif">Guest Information</h2>
+                </div>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" class="form-control" required>
+                    </div>
+                    <div class="form-group" style="grid-column: 1 / -1;">
+                        <label>Special Requests</label>
+                        <textarea class="form-control" placeholder="Dietary requirements, celebrations, etc."></textarea>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- bill summary -->
+        <aside class="summary-sidebar">
+            <div class="summary-card">
+                <h2 class="serif">Reservation Summary</h2>
+                
+                <div class="summary-row dates">
+                    <div class="label" id="display-dates">Select Dates</div>
+                    <div class="value" id="display-nights">1 Night</div>
+                </div>
+                
+                <div class="summary-divider"></div>
+                
+                <div class="summary-row">
+                    <div class="label" id="display-room-name">Oceanfront Villa</div>
+                    <div class="value" id="display-room-total">$1,200</div>
+                </div>
+
+                <div class="summary-divider"></div>
+                
+                <div class="summary-row">
+                    <div class="label">Subtotal</div>
+                    <div class="value" id="display-subtotal">$1,200</div>
+                </div>
+                <div class="summary-row">
+                    <div class="label">Taxes & Fees (10%)</div>
+                    <div class="value" id="display-taxes">$120</div>
+                </div>
+                
+                <div class="total-row">
+                    <div class="label">Total</div>
+                    <div class="value" id="display-total">$1,320</div>
+                </div>
+                
+                <button type="submit" class="btn-submit">Confirm Reservation</button>
+            </div>
+        </aside>
+    </form>
+    
+{% endblock %}
