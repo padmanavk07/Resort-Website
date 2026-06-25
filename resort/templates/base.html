@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <header id="header">
+        <div class="nav-container">
+            <a href="{{ url_for('home.index') }}" class="logo">RESORT NAME</a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home.index') }}">HOME</a></li>
+                <li><a href="#">ABOUT US</a></li>
+                <li><a href="{{ url_for('home.services') }}">SERVICES</a></li>
+                <li><a href="#">GALLERY</a></li>
+                <li><a href="#">REVIEWS</a></li>
+                <li><a href="#">CAREERS</a></li>
+                <li><a href="#">PACKAGES</a></li>
+            </ul>
+            <a href="#book" class="btn btn-gold">BOOK NOW</a>
+            <h1 class="triple-bar">≡</h1>
+        </div>
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <div class="container" style="padding-bottom: 0;">
+            <div class="footer-grid fade-up">
+                <div class="footer-col">
+                    <a href="#" class="footer-logo serif">Resort Name</a>
+                    <p style="color: var(--text-light); margin-bottom: 1rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem rem, ut repellendus eligendi itaque sequi tempore! Repudiandae natus deserunt sed quasi eius, facere culpa, velit vitae repellendus ipsum voluptates rerum.</p>
+                    <div class="social-links">
+                        <a href="#">FACEBOOK</i></a>
+                        <a href="#">INSTAGRAM</i></a>
+                        <a href="#">YOUTUBE</i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>The Resort</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Resort Map</a></li>
+                    </ul>
+                </div>
+                                
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul style="color: var(--text-light);">
+                        <li><b>✈</b>ADDRESS</li>
+                        <li><b>☏</b>NUMBER</li>    <!-- to be added later -->
+                        <li><b>✉</b>EMAIL</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Resort Name. All Rights Reserved. | <a href="#" style="color: goldenrod;">Privacy Policy</a> | <a href="#" style="color: goldenrod;">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

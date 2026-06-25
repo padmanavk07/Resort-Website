@@ -1,36 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxury Resort</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-    <header id="header">
-        <div class="nav-container">
-            <a href="#" class="logo">RESORT NAME</a>
-            <ul class="nav-links">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="#">ABOUT US</a></li>
-                <li><a href="services.html">SERVICES</a></li>
-                <li><a href="#">GALLERY</a></li>
-                <li><a href="#">REVIEWS</a></li>
-                <li><a href="#">CAREERS</a></li>
-                <li><a href="#">PACKAGES</a></li>
-            </ul>
-            <a href="#book" class="btn btn-gold">BOOK NOW</a>
-            <h1 class="triple-bar">≡</h1>
-        </div>
-    </header>
-
+{% extends "base.html" %}
+{% block title %}Luxury Resort{% endblock %}
+{% block content %}
     <main>
         <section id="home" class="hero">
             <div class="hero-slides">
-                <div class="slide active" style="background-image: url('images/slide-image-1.jpg');"></div>
-                <div class="slide" style="background-image: url('images/slide-image-2.jpg');"></div>
-                <div class="slide" style="background-image: url('images/slide-image-3.jpg');"></div>
+                <div class="slide active" style="background-image: url({{ url_for('static', filename='images/slide-image-1.jpg') }});"></div>
+                <div class="slide" style="background-image: url({{ url_for('static', filename='images/slide-image-2.jpg') }});"></div>
+                <div class="slide" style="background-image: url({{ url_for('static', filename='images/slide-image-3.jpg') }});"></div>
             </div>
             
             <div class="hero-content fade-up">
@@ -87,7 +63,7 @@
                 <div class="services-wrap">
                     <div class="services-row fade-up">
                         <div class="services-image">
-                            <img src="images/sample.jpeg" alt="Couples Retreat">
+                            <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Couples Retreat">
                         </div>
                         <div class="services-content">
                             <h3>Couples Retreats</h3>
@@ -98,7 +74,7 @@
                     
                     <div class="services-row fade-up">
                         <div class="services-image">
-                            <img src="images/sample.jpeg" alt="Gourmet Dining">
+                            <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Gourmet Dining">
                         </div>
                         <div class="services-content">
                             <h3>Gourmet Dining</h3>
@@ -109,7 +85,7 @@
                     
                     <div class="services-row fade-up">
                         <div class="services-image">
-                            <img src="images/sample.jpeg" alt="Private Beach">
+                            <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Private Beach">
                         </div>
                         <div class="services-content">
                             <h3>Private Beach Access</h3>
@@ -137,48 +113,5 @@
         </section>
 
     </main>
+{% endblock %}
 
-
-
-    <footer>
-        <div class="container" style="padding-bottom: 0;">
-            <div class="footer-grid fade-up">
-                <div class="footer-col">
-                    <a href="#" class="footer-logo serif">Resort Name</a>
-                    <p style="color: var(--text-light); margin-bottom: 1rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem rem, ut repellendus eligendi itaque sequi tempore! Repudiandae natus deserunt sed quasi eius, facere culpa, velit vitae repellendus ipsum voluptates rerum.</p>
-                    <div class="social-links">
-                        <a href="#">FACEBOOK</i></a>
-                        <a href="#">INSTAGRAM</i></a>
-                        <a href="#">YOUTUBE</i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>The Resort</h4>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Resort Map</a></li>
-                    </ul>
-                </div>
-                                
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <ul style="color: var(--text-light);">
-                        <li><b>✈</b>ADDRESS</li>
-                        <li><b>☏</b>NUMBER</li>    <!-- to be added later -->
-                        <li><b>✉</b>EMAIL</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 Resort Name. All Rights Reserved. | <a href="#" style="color: goldenrod;">Privacy Policy</a> | <a href="#" style="color: goldenrod;">Terms of Service</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>

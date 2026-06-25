@@ -1,30 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxury Resort</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-    <header id="header">
-        <div class="nav-container">
-            <a href="index.html" class="logo">RESORT NAME</a>
-            <ul class="nav-links">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="#">ABOUT US</a></li>
-                <li><a href="services.html">SERVICES</a></li>
-                <li><a href="#">GALLERY</a></li>
-                <li><a href="#">REVIEWS</a></li>
-                <li><a href="#">CAREERS</a></li>
-                <li><a href="#">PACKAGES</a></li>
-            </ul>
-            <a href="#" class="btn btn-gold">BOOK NOW</a>
-            <h1 class="triple-bar">≡</h1>
-        </div>
-    </header>
-
+{% extends "base.html" %}
+{% block title %}Luxury Resort - Services{% endblock %}
+{% block content %}
     <main>
         <section class="services-hero">
             <div class="services-hero-content fade-up">
@@ -69,7 +45,7 @@
 
                 <div class="premium-card fade-up">
                     <div class="card-img-box">
-                        <img src="images/sample.jpeg" alt="Oceanfront Villa">
+                        <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Oceanfront Villa">
                     </div>
                     <div class="card-content">
                         <h3 class="serif">Oceanfront Villa</h3>
@@ -88,7 +64,7 @@
 
                 <div class="premium-card fade-up">
                     <div class="card-img-box">
-                        <img src="images/sample.jpeg" alt="Premium Suite">
+                        <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Premium Suite">
                     </div>
                     <div class="card-content">
                         <h3 class="serif">Premium Family Suite</h3>
@@ -107,7 +83,7 @@
 
                 <div class="premium-card fade-up">
                     <div class="card-img-box">
-                        <img src="images/sample.jpeg" alt="Honeymoon Package">
+                        <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Honeymoon Package">
                     </div>
                     <div class="card-content">
                         <h3 class="serif">Honeymoon Retreat</h3>
@@ -136,7 +112,7 @@
                 <div class="grid-3">
                     <div class="premium-card fade-up">
                         <div class="card-img-box">
-                            <img src="images/sample.jpeg" alt="Family Restaurant">
+                            <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Family Restaurant">
                         </div>
                         <div class="card-content">
                             <h3 class="serif">The Family Space</h3>
@@ -147,7 +123,7 @@
 
                     <div class="premium-card fade-up">
                         <div class="card-img-box">
-                            <img src="images/sample.jpeg" alt="Beach Cafe">
+                            <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Beach Cafe">
                         </div>
                         <div class="card-content">
                             <h3 class="serif">The Café & Bakery</h3>
@@ -158,7 +134,7 @@
 
                     <div class="premium-card fade-up">
                         <div class="card-img-box">
-                            <img src="images/sample.jpeg" alt="Coastal Lounge">
+                            <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Coastal Lounge">
                         </div>
                         <div class="card-content">
                             <h3 class="serif">The Coastal Lounge</h3>
@@ -186,7 +162,7 @@
                     <a href="#" class="btn btn-gold">Explore Wellness Options</a>
                 </div>
                 <div class="event-banner fade-up">
-                    <img src="images/sample.jpeg" alt="Spa and Wellness Room">
+                    <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Spa and Wellness Room">
                 </div>
             </div>
         </section>
@@ -201,7 +177,7 @@
 
                 <div class="premium-card fade-up">
                     <div class="card-img-box">
-                        <img src="images/sample.jpeg" alt="Movie Nights">
+                        <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Movie Nights">
                     </div>
                     <div class="card-content">
                         <h3 class="serif">Outdoor Movie Nights</h3>
@@ -211,7 +187,7 @@
 
                 <div class="premium-card fade-up">
                     <div class="card-img-box">
-                        <img src="images/sample.jpeg" alt="Nature Tours">
+                        <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Nature Tours">
                     </div>
                     <div class="card-content">
                         <h3 class="serif">Guided Nature Tours</h3>
@@ -221,7 +197,7 @@
 
                 <div class="premium-card fade-up">
                     <div class="card-img-box">
-                        <img src="images/sample.jpeg" alt="Bonfire">
+                        <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Bonfire">
                     </div>
                     <div class="card-content">
                         <h3 class="serif">Beachside Bonfires</h3>
@@ -234,7 +210,7 @@
         <section id="events" class="service-section container" style="border-top: 1px solid rgba(255,255,255,0.05); padding-bottom: 8rem;">
             <div class="grid-2">
                 <div class="event-banner fade-up">
-                    <img src="images/sample.jpeg" alt="Beachfront Event Setup">
+                    <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Beachfront Event Setup">
                 </div>
                 <div class="fade-up">
                     <h2 class="section-title" style="text-align: left;">Events & Celebrations</h2>
@@ -256,45 +232,4 @@
 
     </main>
 
-    <footer>
-        <div class="container" style="padding-bottom: 0;">
-            <div class="footer-grid fade-up">
-                <div class="footer-col">
-                    <a href="#" class="footer-logo serif">Resort Name</a>
-                    <p style="color: ivory; margin-bottom: 1rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem rem, ut repellendus eligendi itaque sequi tempore! Repudiandae natus deserunt sed quasi eius, facere culpa, velit vitae repellendus ipsum voluptates rerum.</p>
-                    <div class="social-links">
-                        <a href="#">FACEBOOK</b></a>
-                        <a href="#">INSTAGRAM</b></a>
-                        <a href="#">YOUTUBE</b></a>
-                    </div>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>The Resort</h4>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Resort Map</a></li>
-                    </ul>
-                </div>
-                                
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <ul style="color: ivory;">
-                        <li><b>✈</b>ADDRESS</li>
-                        <li><b>☏</b>NUMBER</li>    <!-- to be added later -->
-                        <li><b>✉</b>EMAIL</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 Resort Name. All Rights Reserved. | <a href="#" style="color: goldenrod;">Privacy Policy</a> | <a href="#" style="color: goldenrod;">Terms of Service</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+{% endblock %}
