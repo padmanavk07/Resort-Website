@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+    <main>
+        <section id="profile" class="auth-section">
+            <div class="container">
+                <h2 class="section-title fade-up">Admin Dashboard</h2>
+                
+                <div class="auth-card fade-up">
+                    <a href="{{ url_for('auth.logout') }}" class="btn btn-outline">Logout</a>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

@@ -3,7 +3,7 @@ from flask import (
 )
 from werkzeug.exceptions import abort
 
-from resort.auth import login_required, admin_required
+from resort.auth import admin_required
 from resort.db import query_all, query_one, execute
 
 
@@ -13,4 +13,4 @@ bp = Blueprint('courses', __name__, url_prefix='/admin')
 @bp.route('/')
 @admin_required
 def index():
-    return render_template("index.html")
+    return render_template("admin/dashboard.html")
