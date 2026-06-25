@@ -13,12 +13,12 @@ bp = Blueprint('home', __name__)
 
 @bp.route('/')
 def index():
-    return render_template("index.html")
+    return render_template("index.html", user=g.user)
 
 
 @bp.route('/services')
 def services():
-    return render_template("services.html")
+    return render_template("services.html", user=g.user)
 
 @bp.route('/profile')
 @login_required
@@ -27,7 +27,7 @@ def profile():
     user = query_one('SELECT * FROM users WHERE id = %s', (user_id,))
     if user is None:
         abort(404, "User not found.")
-    return render_template("profile.html", user=user)
+    return render_template("profile.html", user=g.user)
 
 @bp.route('/join', methods=['GET', 'POST'])
 def join():

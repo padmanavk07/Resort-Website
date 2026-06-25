@@ -190,42 +190,22 @@
                     <div class="table-header"><h2>Review Staff Applications</h2></div>
                     <table>
                         <thead>
-                            <tr><th>Application ID</th><th>Applicant Name</th><th>Position Applied</th><th>Date Applied</th><th>Resume</th><th>Action</th></tr>
+                            <tr><th>Application ID</th><th>Applicant Name</th><th>Position Applied</th><th>Email</th><th>Resume</th><th>Action</th></tr>
                         </thead>
                         <tbody>
+                            {% for applicant in applicants %}
                             <tr>
-                                <td>#1234</td>
-                                <td>Name</td>
-                                <td>Executive Chef</td>
-                                <td>Jul 23, 2026</td>
-                                <td><a href="#" target="_blank" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">View Resume</a></td>
+                                <td>{{ applicant.id }}</td>
+                                <td>{{ applicant.fname }} {{ applicant.lname }}</td>
+                                <td>{{ applicant.position }}</td>
+                                <td>{{ applicant.email }}</td>
+                                <td><a href={{ applicant.resume }} target="_blank" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">View Resume</a></td>
                                 <td style="display: flex; gap: 10px;">
-                                    <button class="btn-action approve" onclick="this.innerText='Hired'; this.classList.add('disabled');">Accept</button>
-                                    <button class="btn-action" style="border-color: #e74c3c; color: #e74c3c;" onclick="this.closest('tr').style.display='none';">Reject</button>
+                                    <button class="btn-action approve"><a href="{{ url_for('admin.acceptapp', applicant_id=applicant.id) }}">Accept</a></button>
+                                    <button class="btn-action" style="border-color: #e74c3c; color: #e74c3c;"><a href="{{ url_for('admin.rejectapp', applicant_id=applicant.id) }}">Reject</a></button>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>#1235</td>
-                                <td>Name</td>
-                                <td>Spa Therapist</td>
-                                <td>Jul 24, 2026</td>
-                                <td><a href="#" target="_blank" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">View Resume</a></td>
-                                <td style="display: flex; gap: 10px;">
-                                    <button class="btn-action approve" onclick="this.innerText='Hired'; this.classList.add('disabled');">Accept</button>
-                                    <button class="btn-action" style="border-color: #e74c3c; color: #e74c3c;" onclick="this.closest('tr').style.display='none';">Reject</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>#1236</td>
-                                <td>Name</td>
-                                <td>Receptionist</td>
-                                <td>Jul 24, 2026</td>
-                                <td><a href="#" target="_blank" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">View Resume</a></td>
-                                <td style="display: flex; gap: 10px;">
-                                    <button class="btn-action approve" onclick="this.innerText='Hired'; this.classList.add('disabled');">Accept</button>
-                                    <button class="btn-action" style="border-color: #e74c3c; color: #e74c3c;" onclick="this.closest('tr').style.display='none';">Reject</button>
-                                </td>
-                            </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>

@@ -32,7 +32,13 @@
                 <li><a href="#">PACKAGES</a></li>
             </ul>
 
-            <a href="#book" class="btn btn-gold">BOOK NOW</a>
+            {% if user and user['admin'] %}
+                <a href="{{ url_for('admin.dashboard') }}" class="btn btn-gold">DASHBOARD</a>
+            {% elif user and not user['admin'] %}
+                <a href="{{ url_for('home.profile') }}" class="btn btn-gold">PROFILE</a>
+            {% else %}
+                <a href="{{ url_for('home.services') }}" class="btn btn-gold">BOOK NOW</a>
+            {% endif %}
             <h1 onclick=showSidebar() class="triple-bar">≡</h1>
         </div>
     </header>
