@@ -1,0 +1,753 @@
+Here's the complete source code for the Azure Bay Resort & Spa — Careers website (pure HTML + CSS, navy blue & gold theme).
+
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Careers — Azure Bay Resort & Spa</title>
+<link rel="stylesheet" href="styles.css" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <span class="logo-mark">A</span>
+        <span class="logo-text">Azure Bay <em>Resort & Spa</em></span>
+      </a>
+      <nav class="nav-links">
+        <a href="#why">Why Us</a>
+        <a href="#positions">Open Positions</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#apply">Apply</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#apply" class="btn btn-gold nav-cta">Apply Now</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="eyebrow">Careers at Azure Bay</span>
+      <h1>Craft Unforgettable<br/><span class="gold">Moments by the Sea</span></h1>
+      <p>Join a team where hospitality is an art form. Discover a career that blends purpose, prestige, and paradise on the shores of Azure Bay.</p>
+      <div class="hero-cta">
+        <a href="#positions" class="btn btn-gold">View Open Roles</a>
+        <a href="#why" class="btn btn-outline">Why Work With Us</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>25+</strong><span>Years of Excellence</span></div>
+        <div><strong>600+</strong><span>Team Members</span></div>
+        <div><strong>18</strong><span>Departments</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY WORK WITH US -->
+  <section id="why" class="section why">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Why Work With Us</span>
+        <h2>A Place Where <span class="gold">Careers Flourish</span></h2>
+        <p>We invest in our people the way we invest in our guests — with care, craftsmanship, and a touch of luxury.</p>
+      </div>
+
+      <div class="why-grid">
+        <article class="why-card">
+          <div class="why-num">01</div>
+          <h3>Career Growth</h3>
+          <p>Structured development paths, mentorship, and access to international hospitality training programs.</p>
+        </article>
+        <article class="why-card">
+          <div class="why-num">02</div>
+          <h3>World-Class Culture</h3>
+          <p>A diverse, respectful, and inspiring environment where every voice contributes to the guest experience.</p>
+        </article>
+        <article class="why-card">
+          <div class="why-num">03</div>
+          <h3>Coastal Lifestyle</h3>
+          <p>Live and work in one of the most breathtaking destinations on the coast — wellness included.</p>
+        </article>
+        <article class="why-card">
+          <div class="why-num">04</div>
+          <h3>Recognition</h3>
+          <p>Performance bonuses, employee-of-the-month awards, and annual celebration galas.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPEN POSITIONS -->
+  <section id="positions" class="section positions">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Open Positions</span>
+        <h2>Find Your <span class="gold">Place With Us</span></h2>
+        <p>Explore current opportunities across our departments — from culinary arts to guest experience.</p>
+      </div>
+
+      <div class="jobs">
+        <div class="job-card">
+          <div class="job-meta">
+            <span class="tag">Food & Beverage</span>
+            <span class="job-type">Full-time</span>
+          </div>
+          <h3>Executive Sous Chef</h3>
+          <p>Lead our signature oceanfront restaurant kitchen alongside our Michelin-trained Executive Chef.</p>
+          <div class="job-footer">
+            <span>📍 Azure Bay, Main Resort</span>
+            <a href="#apply" class="link-gold">Apply →</a>
+          </div>
+        </div>
+
+        <div class="job-card">
+          <div class="job-meta">
+            <span class="tag">Guest Services</span>
+            <span class="job-type">Full-time</span>
+          </div>
+          <h3>Front Office Manager</h3>
+          <p>Oversee daily front desk operations and elevate every arrival into a signature Azure Bay welcome.</p>
+          <div class="job-footer">
+            <span>📍 Azure Bay, Main Resort</span>
+            <a href="#apply" class="link-gold">Apply →</a>
+          </div>
+        </div>
+
+        <div class="job-card">
+          <div class="job-meta">
+            <span class="tag">Spa & Wellness</span>
+            <span class="job-type">Full-time</span>
+          </div>
+          <h3>Senior Spa Therapist</h3>
+          <p>Deliver bespoke wellness rituals in our award-winning oceanside spa sanctuary.</p>
+          <div class="job-footer">
+            <span>📍 Serenity Spa Wing</span>
+            <a href="#apply" class="link-gold">Apply →</a>
+          </div>
+        </div>
+
+        <div class="job-card">
+          <div class="job-meta">
+            <span class="tag">Housekeeping</span>
+            <span class="job-type">Full-time</span>
+          </div>
+          <h3>Housekeeping Supervisor</h3>
+          <p>Maintain the impeccable standards that define a five-star stay at Azure Bay.</p>
+          <div class="job-footer">
+            <span>📍 Azure Bay, Main Resort</span>
+            <a href="#apply" class="link-gold">Apply →</a>
+          </div>
+        </div>
+
+        <div class="job-card">
+          <div class="job-meta">
+            <span class="tag">Marketing</span>
+            <span class="job-type">Hybrid</span>
+          </div>
+          <h3>Digital Marketing Lead</h3>
+          <p>Shape the digital voice of Azure Bay across web, social, and luxury travel partnerships.</p>
+          <div class="job-footer">
+            <span>📍 Remote / On-site</span>
+            <a href="#apply" class="link-gold">Apply →</a>
+          </div>
+        </div>
+
+        <div class="job-card">
+          <div class="job-meta">
+            <span class="tag">Events</span>
+            <span class="job-type">Full-time</span>
+          </div>
+          <h3>Wedding & Events Coordinator</h3>
+          <p>Curate unforgettable celebrations in our oceanfront pavilions and gardens.</p>
+          <div class="job-footer">
+            <span>📍 Azure Bay, Main Resort</span>
+            <a href="#apply" class="link-gold">Apply →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section id="benefits" class="section benefits">
+    <div class="container">
+      <div class="section-head light">
+        <span class="eyebrow">Benefits</span>
+        <h2>Perks Worthy of <span class="gold">Our People</span></h2>
+        <p>We believe in rewarding excellence — generously and consistently.</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit"><div class="b-icon">✦</div><h4>Competitive Salary</h4><p>Industry-leading compensation with annual reviews.</p></div>
+        <div class="benefit"><div class="b-icon">✦</div><h4>Health & Wellness</h4><p>Comprehensive medical, dental, and wellness coverage.</p></div>
+        <div class="benefit"><div class="b-icon">✦</div><h4>Travel Discounts</h4><p>Exclusive employee rates across partner resorts globally.</p></div>
+        <div class="benefit"><div class="b-icon">✦</div><h4>Paid Leave</h4><p>Generous vacation, sick days, and family leave.</p></div>
+        <div class="benefit"><div class="b-icon">✦</div><h4>Meals On Duty</h4><p>Chef-prepared staff meals in our dedicated dining lounge.</p></div>
+        <div class="benefit"><div class="b-icon">✦</div><h4>Training Academy</h4><p>Free access to luxury hospitality certifications.</p></div>
+        <div class="benefit"><div class="b-icon">✦</div><h4>Retirement Plan</h4><p>Employer-matched savings to secure your future.</p></div>
+        <div class="benefit"><div class="b-icon">✦</div><h4>Staff Housing</h4><p>Subsidized housing within minutes of the resort.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATION FORM -->
+  <section id="apply" class="section apply">
+    <div class="container apply-wrap">
+      <div class="apply-info">
+        <span class="eyebrow">Application</span>
+        <h2>Begin Your <span class="gold">Azure Bay Journey</span></h2>
+        <p>Submit your details and our talent team will be in touch. We review every application personally.</p>
+        <ul class="apply-list">
+          <li><span>01</span> Tell us about yourself</li>
+          <li><span>02</span> Share your experience</li>
+          <li><span>03</span> Meet our team</li>
+          <li><span>04</span> Welcome to the family</li>
+        </ul>
+      </div>
+
+      <form class="apply-form" onsubmit="event.preventDefault();">
+        <div class="row">
+          <div class="field">
+            <label>First Name</label>
+            <input type="text" placeholder="Jane" />
+          </div>
+          <div class="field">
+            <label>Last Name</label>
+            <input type="text" placeholder="Doe" />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label>Email</label>
+            <input type="email" placeholder="jane@example.com" />
+          </div>
+          <div class="field">
+            <label>Phone</label>
+            <input type="tel" placeholder="+1 555 000 0000" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Position Applying For</label>
+          <select>
+            <option>Select a role</option>
+            <option>Executive Sous Chef</option>
+            <option>Front Office Manager</option>
+            <option>Senior Spa Therapist</option>
+            <option>Housekeeping Supervisor</option>
+            <option>Digital Marketing Lead</option>
+            <option>Wedding & Events Coordinator</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Years of Experience</label>
+          <input type="text" placeholder="e.g. 5 years" />
+        </div>
+
+        <div class="field">
+          <label>Cover Letter</label>
+          <textarea rows="5" placeholder="Tell us why you'd love to join Azure Bay..."></textarea>
+        </div>
+
+        <div class="field file-field">
+          <label>Upload Resume</label>
+          <input type="file" />
+        </div>
+
+        <button type="submit" class="btn btn-gold full">Submit Application</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <footer id="contact" class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#" class="logo logo-light">
+          <span class="logo-mark">A</span>
+          <span class="logo-text">Azure Bay <em>Resort & Spa</em></span>
+        </a>
+        <p class="footer-tag">Where careers meet the coastline.</p>
+      </div>
+      <div>
+        <h5>Contact HR</h5>
+        <p>careers@azurebayresort.com</p>
+        <p>+1 (555) 240-9000</p>
+      </div>
+      <div>
+        <h5>Visit Us</h5>
+        <p>17 Coral Promenade<br/>Azure Bay, Coastal District</p>
+      </div>
+      <div>
+        <h5>Follow</h5>
+        <p>LinkedIn · Instagram · Facebook</p>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <span>© 2025 Azure Bay Resort & Spa. All rights reserved.</span>
+      <span>Privacy · Terms · Accessibility</span>
+    </div>
+  </footer>
+
+</body>
+</html>
+styles.css
+/* ---------- BASE ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --navy-900: #08152e;
+  --navy-800: #0c1d40;
+  --navy-700: #122a55;
+  --navy-600: #1b3a72;
+  --gold-500: #c9a14a;
+  --gold-400: #d8b65f;
+  --gold-300: #e7cf8a;
+  --ivory:    #f7f1e3;
+  --cream:    #fbf8f1;
+  --text-dark:#11213f;
+  --text-mute:#5e6b80;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background: var(--cream);
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
+
+h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; line-height: 1.15; }
+
+.gold { color: var(--gold-500); font-style: italic; }
+
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold-500);
+  margin-bottom: 18px;
+  position: relative;
+  padding-left: 38px;
+}
+.eyebrow::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 50%;
+  width: 28px; height: 1px;
+  background: var(--gold-500);
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  display: inline-block;
+  padding: 14px 30px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all .35s ease;
+}
+.btn-gold {
+  background: var(--gold-500);
+  color: var(--navy-900);
+  border-color: var(--gold-500);
+}
+.btn-gold:hover {
+  background: transparent;
+  color: var(--gold-400);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--ivory);
+  border-color: rgba(247,241,227,0.5);
+}
+.btn-outline:hover {
+  border-color: var(--gold-400);
+  color: var(--gold-400);
+}
+.full { width: 100%; }
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(8, 21, 46, 0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(201,161,74,0.18);
+}
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--ivory);
+}
+.logo-mark {
+  width: 38px; height: 38px;
+  display: grid; place-items: center;
+  border: 1px solid var(--gold-500);
+  color: var(--gold-500);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+.logo-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+.logo-text em { color: var(--gold-400); font-style: italic; font-size: 14px; display: block; letter-spacing: 3px; margin-top: -4px; }
+
+.nav-links { display: flex; gap: 36px; }
+.nav-links a {
+  color: var(--ivory);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  position: relative;
+  transition: color .3s;
+}
+.nav-links a:hover { color: var(--gold-400); }
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -6px;
+  width: 0; height: 1px;
+  background: var(--gold-400);
+  transition: width .3s ease;
+}
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta { padding: 11px 24px; font-size: 12px; }
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(ellipse at top right, rgba(201,161,74,0.12), transparent 60%),
+    linear-gradient(180deg, var(--navy-900) 0%, var(--navy-800) 100%);
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(201,161,74,0.08) 0%, transparent 40%),
+    repeating-linear-gradient(45deg, transparent 0 60px, rgba(255,255,255,0.015) 60px 61px);
+  pointer-events: none;
+}
+.hero-content {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 28px;
+  width: 100%;
+  color: var(--ivory);
+}
+.hero h1 {
+  font-size: clamp(40px, 6vw, 78px);
+  margin: 14px 0 24px;
+  letter-spacing: 0.5px;
+}
+.hero p {
+  max-width: 560px;
+  font-size: 17px;
+  color: rgba(247,241,227,0.78);
+  margin-bottom: 40px;
+}
+.hero-cta { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 80px; }
+
+.hero-stats {
+  display: flex;
+  gap: 60px;
+  padding-top: 36px;
+  border-top: 1px solid rgba(201,161,74,0.25);
+  max-width: 700px;
+}
+.hero-stats > div { display: flex; flex-direction: column; }
+.hero-stats strong {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  color: var(--gold-400);
+  font-weight: 600;
+}
+.hero-stats span {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(247,241,227,0.65);
+}
+
+/* ---------- SECTIONS ---------- */
+.section { padding: 120px 0; }
+
+.section-head { max-width: 720px; margin-bottom: 70px; }
+.section-head h2 { font-size: clamp(34px, 4.5vw, 54px); margin: 14px 0 18px; }
+.section-head p { color: var(--text-mute); font-size: 17px; }
+.section-head.light h2, .section-head.light .eyebrow { color: var(--ivory); }
+.section-head.light h2 { color: var(--ivory); }
+.section-head.light p { color: rgba(247,241,227,0.75); }
+
+/* ---------- WHY ---------- */
+.why { background: var(--cream); }
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 28px;
+}
+.why-card {
+  padding: 44px 32px;
+  background: #fff;
+  border: 1px solid rgba(18,42,85,0.08);
+  position: relative;
+  transition: transform .4s ease, box-shadow .4s ease, border-color .4s ease;
+}
+.why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px -30px rgba(8,21,46,0.25);
+  border-color: var(--gold-400);
+}
+.why-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  color: var(--gold-500);
+  margin-bottom: 24px;
+}
+.why-card h3 { font-size: 24px; color: var(--navy-800); margin-bottom: 12px; }
+.why-card p { color: var(--text-mute); font-size: 15px; }
+
+/* ---------- POSITIONS ---------- */
+.positions { background: #fff; border-top: 1px solid rgba(18,42,85,0.06); border-bottom: 1px solid rgba(18,42,85,0.06); }
+.jobs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+.job-card {
+  padding: 36px;
+  background: var(--cream);
+  border-left: 3px solid var(--gold-500);
+  transition: all .35s ease;
+}
+.job-card:hover {
+  background: var(--navy-800);
+  color: var(--ivory);
+  transform: translateY(-4px);
+}
+.job-card:hover h3 { color: var(--gold-400); }
+.job-card:hover p,
+.job-card:hover .job-footer span { color: rgba(247,241,227,0.75); }
+.job-card:hover .tag { background: rgba(201,161,74,0.18); color: var(--gold-300); }
+.job-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+.tag {
+  background: rgba(201,161,74,0.15);
+  color: var(--gold-500);
+  font-size: 11px;
+  padding: 5px 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all .3s;
+}
+.job-type { font-size: 12px; color: var(--text-mute); letter-spacing: 1px; text-transform: uppercase; }
+.job-card h3 { font-size: 26px; color: var(--navy-800); margin-bottom: 12px; transition: color .3s; }
+.job-card p { color: var(--text-mute); font-size: 15px; margin-bottom: 24px; transition: color .3s; }
+.job-footer { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--text-mute); }
+.link-gold { color: var(--gold-500); text-decoration: none; font-weight: 600; letter-spacing: 1.5px; font-size: 13px; text-transform: uppercase; }
+.link-gold:hover { color: var(--gold-300); }
+
+/* ---------- BENEFITS ---------- */
+.benefits {
+  background: linear-gradient(180deg, var(--navy-900) 0%, var(--navy-800) 100%);
+  color: var(--ivory);
+  position: relative;
+}
+.benefits::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle at 80% 20%, rgba(201,161,74,0.08), transparent 50%);
+  pointer-events: none;
+}
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 28px;
+  position: relative;
+}
+.benefit {
+  padding: 32px 26px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(201,161,74,0.18);
+  transition: all .35s ease;
+}
+.benefit:hover {
+  background: rgba(201,161,74,0.08);
+  border-color: var(--gold-400);
+  transform: translateY(-4px);
+}
+.b-icon {
+  color: var(--gold-400);
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+.benefit h4 { font-size: 22px; color: var(--ivory); margin-bottom: 8px; }
+.benefit p { color: rgba(247,241,227,0.7); font-size: 14px; }
+
+/* ---------- APPLY ---------- */
+.apply { background: var(--cream); }
+.apply-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: start;
+}
+.apply-info h2 { font-size: clamp(34px, 4vw, 50px); margin: 14px 0 20px; }
+.apply-info > p { color: var(--text-mute); margin-bottom: 40px; }
+.apply-list { list-style: none; }
+.apply-list li {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(18,42,85,0.08);
+  font-size: 15px;
+  color: var(--navy-800);
+}
+.apply-list li span {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--gold-500);
+  font-size: 22px;
+}
+
+.apply-form {
+  background: #fff;
+  padding: 50px 44px;
+  border: 1px solid rgba(18,42,85,0.08);
+  box-shadow: 0 30px 80px -40px rgba(8,21,46,0.25);
+}
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.field { margin-bottom: 22px; }
+.field label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--navy-700);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid rgba(18,42,85,0.15);
+  background: var(--cream);
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  color: var(--text-dark);
+  transition: all .25s;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--gold-500);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(201,161,74,0.12);
+}
+.file-field input { padding: 10px; background: var(--cream); }
+
+/* ---------- FOOTER ---------- */
+.footer {
+  background: var(--navy-900);
+  color: rgba(247,241,227,0.75);
+  padding: 80px 0 30px;
+  border-top: 1px solid rgba(201,161,74,0.2);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(247,241,227,0.08);
+}
+.logo-light .logo-text { color: var(--ivory); }
+.footer-tag {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--gold-400);
+  margin-top: 16px;
+  font-size: 18px;
+}
+.footer h5 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-400);
+  margin-bottom: 16px;
+}
+.footer p { font-size: 14px; margin-bottom: 6px; }
+
+.footer-bottom {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: rgba(247,241,227,0.5);
+  letter-spacing: 1px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .nav-links, .nav-cta { display: none; }
+  .hero-stats { gap: 30px; flex-wrap: wrap; }
+  .hero-stats strong { font-size: 32px; }
+  .apply-wrap { grid-template-columns: 1fr; gap: 50px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .row { grid-template-columns: 1fr; }
+  .section { padding: 80px 0; }
+  .apply-form { padding: 36px 26px; }
+}
+@media (max-width: 520px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+  .hero-cta { flex-direction: column; align-items: flex-start; }
+  .btn { width: 100%; text-align: center; }
+}
