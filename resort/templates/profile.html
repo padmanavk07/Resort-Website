@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Luxury Resort - Profile{% endblock %}
+
+{% block content %}
+    <main>
+        <section id="profile" class="auth-section">
+            <div class="container">
+                <h2 class="section-title fade-up">Your Profile</h2>
+                <p class="section-subtitle fade-up">Manage your account details and preferences.</p>
+                
+                <div class="auth-card fade-up">
+                    <h3>Profile Information</h3>
+                    <a href="{{ url_for('auth.logout') }}" class="btn btn-outline">Logout</a>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

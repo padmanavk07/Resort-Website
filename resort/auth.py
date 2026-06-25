@@ -18,7 +18,7 @@ def register():
         username = request.form['username']
         email = request.form['email']
         password = request.form['password']
-        confirm_password = request.form['confirm_password']
+        cpassword = request.form['cpassword']
         error = None
 
         if not username:
@@ -31,7 +31,7 @@ def register():
             'SELECT id FROM users WHERE email = %s', (email,)
         ) is not None:
             error = f"Email {email} is already registered."
-        elif password != confirm_password:
+        elif password != cpassword:
             error = "Passwords do not match."
 
         if error is None:
@@ -39,14 +39,14 @@ def register():
                 'INSERT INTO users (username, password, email) VALUES (%s, %s, %s)',
                 (username, generate_password_hash(password), email)
             )
-            return redirect(url_for('auth.login'))
+            return redirect(url_for('home.index'))
 
         flash(error)
 
     return render_template('auth/register.html')
 
 
-@bp.route('/', methods=('GET', 'POST'))
+@bp.route('/login', methods=('GET', 'POST'))
 def login():
     if request.method == 'POST':
         email = request.form['email']
@@ -56,24 +56,23 @@ def login():
             'SELECT * FROM users WHERE email = %s', (email,)
         )
         if user is None:
-            error = 'Incorrect email.'
+            error = 'Account with that email does not exist.'
+            return redirect(url_for('auth.register'))
+        
         elif not check_password_hash(user['password'], password):
             error = 'Incorrect password.'
+            return redirect(url_for('home.index'))
 
         if error is None:
             session.clear()
             session['user_id'] = user['id']
-            return redirect(url_for('admin.dashboard'))
-
-        flash(error)
-
-    return render_template('auth/login.html')
+            return redirect(url_for('home.profile'))
 
 
 @bp.route('/logout')
 def logout():
     session.clear()
-    return redirect(url_for('index'))
+    return redirect(url_for('home.index'))
 
 
 @bp.before_app_request
@@ -92,7 +91,7 @@ def login_required(view):
     @functools.wraps(view)
     def wrapped_view(**kwargs):
         if g.user is None:
-            return redirect(url_for('auth.login'))
+            return redirect(url_for('home.index'))
         return view(**kwargs)
     
     return wrapped_view
@@ -102,7 +101,7 @@ def admin_required(view):
     @functools.wraps(view)
     def wrapped_view(**kwargs):
         if g.user is None or not g.user['admin']:
-            return redirect(url_for('auth.login'))
+            return redirect(url_for('home.index'))
         return view(**kwargs)
     
     return wrapped_view

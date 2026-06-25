@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Luxury Resort - Register{% endblock %}
+
+{% block content %}
+    <main>
+        <section id="register" class="auth-section">
+            <div class="container">
+                <h2 class="section-title fade-up">Create Your Account</h2>
+                <p class="section-subtitle fade-up">Join our exclusive community and unlock a world of luxury experiences.</p>
+                
+                <div class="auth-card fade-up">
+                    <h3>Register</h3>
+                    <form action="{{ url_for('auth.register') }}" method="post">
+                        <input type="text" id="register-name" name="username" placeholder="Full Name" required>
+                        <input type="email" id="register-email" name="email" placeholder="Email Address" required>
+                        <input type="password" id="register-password" name="password" placeholder="Password" required>
+                        <input type="password" id="register-password" name="cpassword" placeholder="Confirm Password" required>
+                        <button type="submit" class="btn btn-gold">Sign Up</button>
+                    </form>
+                    <p>Already have an account? <a href="{{ url_for('home.index') }}">Sign In</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

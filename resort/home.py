@@ -18,3 +18,12 @@ def index():
 @bp.route('/services')
 def services():
     return render_template("services.html")
+
+@bp.route('/profile')
+@login_required
+def profile():
+    user_id = g.user['id']
+    user = query_one('SELECT * FROM users WHERE id = %s', (user_id,))
+    if user is None:
+        abort(404, "User not found.")
+    return render_template("profile.html", user=user)
