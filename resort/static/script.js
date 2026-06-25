@@ -29,3 +29,13 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.fade-up').forEach(el => {
     observer.observe(el);
 });
+
+// Sidebar functions for mobile
+function showSidebar() {
+    const sidebar = document.querySelector('.side-bar');
+    sidebar.style.right = "0";
+}
+function hideSidebar() {
+    const sidebar = document.querySelector('.side-bar');
+    sidebar.style.right = "-300px";
+}

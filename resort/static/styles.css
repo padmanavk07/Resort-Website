@@ -63,7 +63,7 @@ img {
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 12px 32px;
+    padding: min(12px, 1.5%) min(32px, 2.5%);
     font-family: Poppins, sans-serif;
     font-size: 0.9rem;
     letter-spacing: 2px;
@@ -124,9 +124,9 @@ header {
 }
 .logo {
     font-family: Bodoni Moda, serif;
-    font-size: 2rem;
+    font-size: min(2rem, 5vw);
     color: goldenrod;
-    letter-spacing: 4px;
+    letter-spacing: 3px
 }
 .nav-links {
     display: flex;
@@ -146,6 +146,29 @@ header {
     display: none; 
     font-size: 3.5rem; 
     color: goldenrod; 
+}
+
+/* Side bar for mobile */
+.side-bar {
+    position: fixed;
+    top: 0; right: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: rgb(5, 5, 48);
+    transition: right 0.4s ease-in-out;
+    z-index: 2000;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.side-bar li {
+    width: 100%;
+    margin: 0.5rem;
+    font-family: Poppins, sans-serif;
+}
+.side-bar li:hover {
+    color: goldenrod;
 }
 
 /* Hero Section */
@@ -294,7 +317,7 @@ header {
 .membership-box {
     display: flex;
     justify-content: center;
-    width: 50%;
+    width: max(50%, 25rem);
     background: rgba(18, 18, 18, 0.6);
     backdrop-filter: blur(15px);
     border: 1px solid var(--glass-border);
@@ -324,7 +347,7 @@ form input {
 
 form button {
     width: 100%; 
-    margin: 0.5rem;
+    margin: 0.5rem 0;
 }
 
 
@@ -468,7 +491,7 @@ footer {
 }
 .grid-2 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 4rem;
     align-items: center;
     margin-top: 3rem;
@@ -564,6 +587,24 @@ footer {
     object-fit: cover;
 }
 
+/* Register Page */
+
+.auth-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.auth-card {
+    width: max(50%, 20rem);
+    padding: 1%;
+}
+.auth-card input {
+    margin: 2% 0;
+}
+.auth-card p {
+    font-size: 0.9rem;
+    color: aliceblue;
+}
 
 /* For different devices */
 @media (max-width: 1024px) {
@@ -575,6 +616,6 @@ footer {
     .triple-bar { display: block; }
     .hero-content h1 { font-size: 3rem; }
     .hero-btns { flex-direction: column; }
-    .service-row, .service-row:nth-child(even) { flex-direction: column; text-align: center; gap: 2rem; }
+    .services-row, .services-row:nth-child(even) { flex-direction: column; text-align: center; gap: 2rem; }
     .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
 }

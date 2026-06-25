@@ -20,8 +20,20 @@
                 <li><a href="#">CAREERS</a></li>
                 <li><a href="#">PACKAGES</a></li>
             </ul>
+
+            <ul class="side-bar">
+                <li onclick=hideSidebar()><h1>≡</h1></li>
+                <li><a href="{{ url_for('home.index') }}">HOME</a></li>
+                <li><a href="#">ABOUT US</a></li>
+                <li><a href="{{ url_for('home.services') }}">SERVICES</a></li>
+                <li><a href="#">GALLERY</a></li>
+                <li><a href="#">REVIEWS</a></li>
+                <li><a href="#">CAREERS</a></li>
+                <li><a href="#">PACKAGES</a></li>
+            </ul>
+
             <a href="#book" class="btn btn-gold">BOOK NOW</a>
-            <h1 class="triple-bar">≡</h1>
+            <h1 onclick=showSidebar() class="triple-bar">≡</h1>
         </div>
     </header>
 
@@ -52,7 +64,7 @@
                                 
                 <div class="footer-col">
                     <h4>Contact Us</h4>
-                    <ul style="color: var(--text-light);">
+                    <ul style="color: ivory;">
                         <li><b>✈</b>ADDRESS</li>
                         <li><b>☏</b>NUMBER</li>    <!-- to be added later -->
                         <li><b>✉</b>EMAIL</li>
