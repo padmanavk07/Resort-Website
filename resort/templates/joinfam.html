@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Careers — Azure Bay Resort & Spa</title>
-<link rel="stylesheet" href="style1.css" />
+<link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}" />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -12,7 +12,7 @@
   <!-- NAVBAR -->
   <header class="navbar">
     <div class="nav-container">
-      <a href="#" class="logo">
+      <a href="{{ url_for('home.index') }}" class="logo">
         <span class="logo-mark">A</span>
         <span class="logo-text">Azure Bay <em>Resort & Spa</em></span>
       </a>
@@ -208,32 +208,32 @@
         </ul>
       </div>
 
-      <form class="apply-form" onsubmit="event.preventDefault();">
+      <form class="apply-form" action="{{ url_for('home.join') }}" method="POST" enctype="multipart/form-data">
         <div class="row">
           <div class="field">
             <label>First Name</label>
-            <input type="text" placeholder="Jane" />
+            <input type="text" placeholder="Jane" name="fname"/>
           </div>
           <div class="field">
             <label>Last Name</label>
-            <input type="text" placeholder="Doe" />
+            <input type="text" placeholder="Doe" name="lname"/>
           </div>
         </div>
 
         <div class="row">
           <div class="field">
             <label>Email</label>
-            <input type="email" placeholder="jane@example.com" />
+            <input type="email" placeholder="jane@example.com" name="email"/>
           </div>
           <div class="field">
             <label>Phone</label>
-            <input type="tel" placeholder="+1 555 000 0000" />
+            <input type="tel" placeholder="+1 2555 000 0000" name="phone"/>
           </div>
         </div>
 
         <div class="field">
           <label>Position Applying For</label>
-          <select>
+          <select name="position">
             <option>Select a role</option>
             <option>Executive Sous Chef</option>
             <option>Front Office Manager</option>
@@ -247,17 +247,17 @@
 
         <div class="field">
           <label>Years of Experience</label>
-          <input type="text" placeholder="e.g. 5 years" />
+          <input type="text" placeholder="e.g. 5 years" name="exp"/>
         </div>
 
         <div class="field">
           <label>Cover Letter</label>
-          <textarea rows="5" placeholder="Tell us why you'd love to join Azure Bay..."></textarea>
+          <textarea rows="5" placeholder="Tell us why you'd love to join Azure Bay..." name="cletter"></textarea>
         </div>
 
         <div class="field file-field">
           <label>Upload Resume</label>
-          <input type="file" />
+          <input type="file" name="resume"/>
         </div>
 
         <button type="submit" class="btn btn-gold full">Submit Application</button>
