@@ -52,4 +52,12 @@ def join():
 @bp.route('/booking', methods=['GET', 'POST'])
 @login_required
 def booking():
+    if request.method == 'POST':
+        typeroom = request.args.get('typeroom')
+        totalcost = request.args.get('totalcost')
+        checkindate = request.form.get('checkindate')
+        checkoutdate = request.form.get('checkoutdate')
+        specialrequests = request.form.get('specialrequests')
+        print(f"Booking Details: Room Type: {typeroom}, Total Cost: {totalcost}, Check-in: {checkindate}, Check-out: {checkoutdate}, Special Requests: {specialrequests}")
+
     return render_template("booking.html", user=g.user)

@@ -17,6 +17,7 @@ def register():
     if request.method == 'POST':
         username = request.form['username']
         email = request.form['email']
+        phoneno = request.form['phoneno']
         password = request.form['password']
         cpassword = request.form['cpassword']
         error = None
@@ -36,8 +37,8 @@ def register():
 
         if error is None:
             execute(
-                'INSERT INTO users (username, password, email) VALUES (%s, %s, %s)',
-                (username, generate_password_hash(password), email)
+                'INSERT INTO users (username, password, email, phoneno) VALUES (%s, %s, %s, %s)',
+                (username, generate_password_hash(password), email, phoneno)
             )
             return redirect(url_for('home.index'))
 
