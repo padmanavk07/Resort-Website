@@ -49,6 +49,24 @@
                     <input type="date" id="admin-date">
                 </div>
             </div>
+            <div class="profile-container">
+
+                <div onclick="toggleProfileMenu()" class="profile-btn" id="profileBtn">
+                    <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Profile">
+                </div>
+                <div class="profile-menu" id="profileMenu">
+                    <div class="profile-header">
+                        <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="">
+                        <h3>ADMIN</h3>
+                        <p>admin@gmail.com</p>
+                    </div>
+                    <hr>
+                    <a href="{{ url_for('home.index') }}">Home</a>
+                    <a href="#">Settings</a>
+                    <a href="{{ url_for('auth.logout') }}">Logout</a>
+                </div>
+
+            </div>
         </header>
 
         <!-- Dynamic Content Container -->

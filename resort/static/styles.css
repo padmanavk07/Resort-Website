@@ -848,7 +848,7 @@ tr:hover {
 /* BOOKING PAGE */
 .page-header { 
     text-align: center; 
-    padding: 4rem 20px 2rem; 
+    padding: 1rem 1.5rem; 
 }
 .page-header h1 { 
     font-size: 3.5rem; 
@@ -863,6 +863,14 @@ tr:hover {
     grid-template-columns: 2fr 1fr;
     gap: 4rem;
     align-items: start;
+}
+
+.my-bookings {
+    background-color: #121212;
+    text-align: center;
+    max-width: 90%;
+    margin: auto;
+    padding: 2rem 20px 1rem;
 }
 
 .step-section {
@@ -962,7 +970,7 @@ tr:hover {
 .profile-btn{
     display: flex;
     align-items: center;
-    gap:    10px;
+    gap: 10px;
     cursor: pointer;
     color: aliceblue;
 }
@@ -999,34 +1007,33 @@ tr:hover {
 
 .profile-header img{
     margin: 0 auto;
-    width:70px;
-    height:70px;
-    border-radius:50%;
-    margin-bottom:10px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 10px;
 }
 
 .profile-header h3{
-    margin:5px 0;
+    margin: 5px 0;
 }
 
 .profile-header p{
-    color:gray;
-    font-size:14px;
+    color: gray;
+    font-size: 14px;
 }
 
 .profile-menu a{
-    display:block;
-    padding:15px 20px;
+    display: block;
+    padding: 0.5rem 1.5rem;
     color: aliceblue;
-    text-decoration:none;
-    /* transition:.3s; */
+    text-decoration: none;
 }
 
 .profile-menu a:hover{
-    background:rgba(255,255,255,0.02);
+    background: rgba(255,255,255,0.02);
 }
 
-
+/* About page */
 .about-hero {
     position: relative;
     height: 85vh;
