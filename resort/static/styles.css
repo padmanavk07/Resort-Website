@@ -971,3 +971,76 @@ tr:hover {
     .form-grid { grid-template-columns: 1fr; }
     .page-header h1 { font-size: 2.5rem; }
 }
+
+/* profile */
+.profile-container{
+    position: relative;
+    display: inline-block;
+}
+
+.profile-btn{
+    display: flex;
+    align-items: center;
+    gap:    10px;
+    cursor: pointer;
+    color: aliceblue;
+}
+
+.profile-btn img{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid goldenrod;
+}
+
+.profile-menu{
+    position: absolute;
+    top: 60px;
+    right: -30px;
+    width: 220px;
+    background: var(--navy-blue-shade);
+    color: aliceblue;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,.2);
+    display: none;
+    z-index: 5000;
+}
+
+.profile-menu.active{
+    display: block;
+}
+
+.profile-header{
+    text-align: center;
+    padding: 20px;
+}
+
+.profile-header img{
+    margin: 0 auto;
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    margin-bottom:10px;
+}
+
+.profile-header h3{
+    margin:5px 0;
+}
+
+.profile-header p{
+    color:gray;
+    font-size:14px;
+}
+
+.profile-menu a{
+    display:block;
+    padding:15px 20px;
+    color: aliceblue;
+    text-decoration:none;
+    /* transition:.3s; */
+}
+
+.profile-menu a:hover{
+    background:rgba(255,255,255,0.02);
+}

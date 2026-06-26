@@ -39,6 +39,32 @@
             {% else %}
                 <a href="{{ url_for('home.booking') }}" class="btn btn-gold">BOOK NOW</a>
             {% endif %}
+
+            <div class="profile-container">
+
+                <div onclick="toggleProfileMenu()" class="profile-btn" id="profileBtn">
+                    <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Profile">
+                </div>
+
+                <div class="profile-menu" id="profileMenu">
+
+                    <div class="profile-header">
+                        <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Profile">
+                        <h3>Name</h3>
+                        <p>name@example.com</p>
+                    </div>
+
+                    <hr>
+
+                    <a href="#">My Bookings</a>
+                    <a href="#">Book More</a>
+                    <a href="#">Account Settings</a>
+                    <a href="#">Logout</a>
+
+                </div>
+
+            </div>
+
             <h1 onclick=showSidebar() class="triple-bar">≡</h1>
         </div>
     </header>

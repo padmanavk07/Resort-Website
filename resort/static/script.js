@@ -93,10 +93,13 @@ roomTypes.forEach(item => {
         this.closest('.room-select-card').querySelector('.btn-select').innerText = 'Selected';
 
         const roomTypeInput = document.querySelector('.room-select-card.selected');
-        
+        document.getElementById("hidden-room-name").value = roomTypeInput.getAttribute('data-room');
+        document.getElementById("hidden-room-price").value = roomTypeInput.getAttribute('data-price');
+        document.getElementById('display-room-name').textContent = roomTypeInput.getAttribute('data-room');
+        document.getElementById('display-room-total').textContent = `$${roomTypeInput.getAttribute('data-price')}`;
+
     });
 
-    const roomTypeInput = document.querySelector('.room-select-card.selected');
 });
 
 const form = document.getElementById('bookingForm');
@@ -109,6 +112,7 @@ const totalPriceDisplay = document.getElementById('display-total');
 const roomNameDisplay = document.getElementById('display-room-name');
 const roomPriceDisplay = document.getElementById('display-room-total');
 const nightsDisplay = document.getElementById('display-nights')
+
 
 // to set the minimum check-in date to today
 const today = new Date().toISOString().split('T')[0];
@@ -130,7 +134,6 @@ function updateCheckoutMinDate() {
 function calculatePrice() {
     const checkInDate = new Date(checkInInput.value);
     const checkOutDate = new Date(checkOutInput.value);
-    // const roomTypeInput = document.querySelector('.room-select-card.selected');
     const roomType = roomTypeInput.getAttribute('data-room');
 
     // Only calculate if both dates are selected and valid
@@ -151,6 +154,9 @@ function calculatePrice() {
         roomPriceDisplay.textContent = `$${rate}`;
         nightsDisplay.textContent = `${nights} nights`;
 
+        document.getElementById("hidden-total-cost").value = total;
+        document.getElementById("hidden-room-name").value = roomType;
+
     } else {
         // Reset to 0 if dates are incomplete
         subTotalPriceDisplay.textContent = `$0`;
@@ -170,3 +176,11 @@ form.addEventListener('submit', function(event) {
 
     console.log('Booking submitted successfully!');
 });
+
+// profile menu toggle
+function toggleProfileMenu() {
+    const profileBtn = document.getElementById('profileBtn');
+    const profileMenu = document.getElementById('profileMenu');
+
+    profileMenu.classList.toggle('active');
+};
