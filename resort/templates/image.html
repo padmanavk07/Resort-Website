@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resort Image Gallery</title>
+    <style>
+        /* CSS Variables for Navy Blue and Gold Theme */
+        :root {
+            --navy-blue: #0A192F;
+            --navy-light: #112240;
+            --gold: #D4AF37;
+            --gold-light: #F3E5AB;
+            --text-light: #E6F1FF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--navy-blue);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            background-color: var(--navy-light);
+            border-bottom: 3px solid var(--gold);
+        }
+
+        header h1 {
+            color: var(--gold);
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--gold-light);
+            font-size: 1.1rem;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .category-section {
+            margin-bottom: 4rem;
+        }
+
+        .category-title {
+            color: var(--gold);
+            font-size: 1.8rem;
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        /* CSS Grid for the Images */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .grid-item {
+            background-color: var(--navy-light);
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .image-caption {
+            padding: 1rem;
+            text-align: center;
+            color: var(--gold-light);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Specific grid adjustments for single images (like the wide view) */
+        .wide-view {
+            grid-template-columns: 1fr;
+        }
+        
+        .wide-view .grid-item img {
+            height: 400px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            .wide-view .grid-item img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Luxury Haven Resort</h1>
+        <p>Explore our world-class amenities and breathtaking views</p>
+    </header>
+
+    <main class="gallery-container">
+
+        <section class="category-section">
+            <h2 class="category-title">Resort Panorama</h2>
+            <div class="image-grid wide-view">
+                <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80" alt="Wide view of the entire resort">
+                    <div class="image-caption">Wide View of Resort</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <h2 class="category-title">Luxury Accommodations</h2>
+            <div class="image-grid">
+                <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=600&q=80" alt="Oceanfront Villa">
+                    <div class="image-caption">Oceanfront Villa</div>
+                </div>
+                <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=600&q=80" alt="Family Suite">
+                    <div class="image-caption">Family Suite</div>
+                </div>
+                <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=600&q=80" alt="Couple's Suite">
+                    <div class="image-caption">Couple's Suite</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <h2 class="category-title">Dining Experiences</h2>
+            <div class="image-grid">
+                <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="Family Dining Space">
+                    <div class="image-caption">Family Dining Space</div>
+                </div>
+                 <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=600&q=80" alt="Outdoor Dining">
+                    <div class="image-caption">Alfresco Dining View</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <h2 class="category-title">Wellness & Fitness</h2>
+            <div class="image-grid">
+                <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80" alt="Luxury Spa">
+                    <div class="image-caption">Tranquil Spa</div>
+                </div>
+                <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80" alt="Fully Equipped Gym">
+                    <div class="image-caption">State-of-the-Art Gym</div>
+                </div>
+                <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1515362778563-6a8d0e44bc0b?auto=format&fit=crop&w=600&q=80" alt="Relaxing Sauna">
+                    <div class="image-caption">Traditional Sauna</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <h2 class="category-title">Resort Activities</h2>
+            <div class="image-grid">
+                <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1540544660406-6a69dacb2804?auto=format&fit=crop&w=600&q=80" alt="Water Sports">
+                    <div class="image-caption">Water Sports</div>
+                </div>
+                <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=600&q=80" alt="Beach Volleyball">
+                    <div class="image-caption">Beach Activities</div>
+                </div>
+                 <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=600&q=80" alt="Poolside Lounging">
+                    <div class="image-caption">Infinity Pool</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <h2 class="category-title">Events & Weddings</h2>
+            <div class="image-grid wide-view">
+                <div class="grid-item">
+                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80" alt="Beachfront Wedding Setup">
+                    <div class="image-caption">Beachfront Wedding Venue</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
