@@ -47,3 +47,9 @@ def join():
         execute('INSERT INTO applications (fname, lname, email, phone, position, exp, cletter, resume) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)',
                 (fname, lname, email, phone, position, exp, cletter, resume_url))
     return render_template("joinfam.html")
+
+
+@bp.route('/booking', methods=['GET', 'POST'])
+@login_required
+def booking():
+    return render_template("booking.html", user=g.user)
