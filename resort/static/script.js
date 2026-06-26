@@ -73,109 +73,133 @@ function checkInGuest(id) {
     button.disabled = true;
     
 }
-// Booking page
+
+// Booking page     
+
 const roomTypes = document.querySelectorAll('.room-select-card');
-const roomRates = {
-    "Oceanfront Villa":1200,
-    "Premium Suite":1000,
-    "Honeymoon Retreat":800
-}
-roomTypes.forEach(item => {
-    item.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        roomTypes.forEach(room => {
-            room.classList.remove('selected');
-            room.querySelector('.btn-select').innerText = 'Select Room';
-        });
-        
-        this.classList.add('selected');
-        this.closest('.room-select-card').querySelector('.btn-select').innerText = 'Selected';
-
-        const roomTypeInput = document.querySelector('.room-select-card.selected');
-        document.getElementById("hidden-room-name").value = roomTypeInput.getAttribute('data-room');
-        document.getElementById("hidden-room-price").value = roomTypeInput.getAttribute('data-price');
-        document.getElementById('display-room-name').textContent = roomTypeInput.getAttribute('data-room');
-        document.getElementById('display-room-total').textContent = `$${roomTypeInput.getAttribute('data-price')}`;
-
-    });
-
-});
 
 const form = document.getElementById('bookingForm');
+
 const checkInInput = document.getElementById('checkin');
 const checkOutInput = document.getElementById('checkout');
-const roomTypeInput = document.querySelector('.room-select-card.selected');
+
 const subTotalPriceDisplay = document.getElementById('display-subtotal');
 const taxesDisplay = document.getElementById('display-taxes');
 const totalPriceDisplay = document.getElementById('display-total');
 const roomNameDisplay = document.getElementById('display-room-name');
 const roomPriceDisplay = document.getElementById('display-room-total');
-const nightsDisplay = document.getElementById('display-nights')
+const nightsDisplay = document.getElementById('display-nights');
 
-
-// to set the minimum check-in date to today
+// minimum date
 const today = new Date().toISOString().split('T')[0];
-checkInInput.setAttribute('min', today);
+checkInInput.min = today;
 
-// to update minimum checkout date based on check-in
+
+roomTypes.forEach(room => {
+
+    room.addEventListener('click', function () {
+
+        roomTypes.forEach(card => {
+            card.classList.remove('selected');
+            card.querySelector('.btn-select').textContent = 'Select Room';
+        });
+
+        this.classList.add('selected');
+        this.querySelector('.btn-select').textContent = 'Selected';
+
+        const roomName = this.dataset.room;
+        const roomPrice = Number(this.dataset.price);
+
+        // Update hidden input
+        document.getElementById("hidden-room-name").value = roomName;
+
+        roomNameDisplay.textContent = roomName;
+        roomPriceDisplay.textContent = `$${roomPrice}`;
+
+        calculatePrice();
+
+    });
+
+});
+
 function updateCheckoutMinDate() {
-    const checkInDate = checkInInput.value;
-    if (checkInDate) {
-        const minCheckOut = new Date(checkInDate);
-        minCheckOut.setDate(minCheckOut.getDate() + 1);
-        
-        const minCheckOutString = minCheckOut.toISOString().split('T')[0];
-        checkOutInput.setAttribute('min', minCheckOutString);
-        
+
+    if (!checkInInput.value) return;
+
+    const minCheckout = new Date(checkInInput.value);
+    minCheckout.setDate(minCheckout.getDate() + 1);
+
+    checkOutInput.min = minCheckout.toISOString().split('T')[0];
+
+    if (checkOutInput.value && new Date(checkOutInput.value) <= new Date(checkInInput.value)) {
+        checkOutInput.value = "";
     }
+
 }
 
 function calculatePrice() {
-    const checkInDate = new Date(checkInInput.value);
-    const checkOutDate = new Date(checkOutInput.value);
-    const roomType = roomTypeInput.getAttribute('data-room');
 
-    // Only calculate if both dates are selected and valid
-    if (checkInInput.value && checkOutInput.value && checkOutDate > checkInDate) {
+    const selectedRoom = document.querySelector('.room-select-card.selected');
 
-        const timeDifference = checkOutDate.getTime() - checkInDate.getTime();
-        const nights = timeDifference / (1000 * 3600 * 24);
-        
-        // Calculate total
-        const rate = roomRates[roomType];
-        const total = nights * rate;
-        
-        // Update the display
-        subTotalPriceDisplay.textContent = `$${total.toFixed(2)}`;
-        taxesDisplay.textContent = `$${(total/10).toFixed(2)}`;
-        totalPriceDisplay.textContent = `$${(total*(1.1)).toFixed(2)}`;
-        roomNameDisplay.textContent = roomType;
+    if (!selectedRoom) return;
+
+    const roomName = selectedRoom.dataset.room;
+    const rate = Number(selectedRoom.dataset.price);
+
+    roomNameDisplay.textContent = roomName;
+
+    if (!checkInInput.value || !checkOutInput.value) {
+
         roomPriceDisplay.textContent = `$${rate}`;
-        nightsDisplay.textContent = `${nights} nights`;
+        subTotalPriceDisplay.textContent = "$0.00";
+        taxesDisplay.textContent = "$0.00";
+        totalPriceDisplay.textContent = "$0.00";
+        nightsDisplay.textContent = "0 Nights";
 
-        document.getElementById("hidden-total-cost").value = total;
-        document.getElementById("hidden-room-name").value = roomType;
+        document.getElementById("hidden-total-cost").value = 0;
 
-    } else {
-        // Reset to 0 if dates are incomplete
-        subTotalPriceDisplay.textContent = `$0`;
+        return;
     }
+
+    const checkIn = new Date(checkInInput.value);
+    const checkOut = new Date(checkOutInput.value);
+
+    if (checkOut <= checkIn) return;
+
+    const nights = (checkOut - checkIn) / (1000 * 3600 * 24)
+    
+
+    const subtotal = nights * rate;
+    const tax = subtotal * 0.10;
+    const grandTotal = subtotal + tax;
+
+    roomPriceDisplay.textContent = `$${subtotal.toFixed(2)}`;
+    subTotalPriceDisplay.textContent = `$${subtotal.toFixed(2)}`;
+    taxesDisplay.textContent = `$${tax.toFixed(2)}`;
+    totalPriceDisplay.textContent = `$${grandTotal.toFixed(2)}`;
+    nightsDisplay.textContent = `${nights} Nights`;
+
+    document.getElementById("hidden-room-name").value = roomName;
+    document.getElementById("hidden-total-cost").value = grandTotal.toFixed(2);
+
 }
 
-// event listeners to trigger calculations when inputs change
 checkInInput.addEventListener('change', () => {
     updateCheckoutMinDate();
     calculatePrice();
 });
+
 checkOutInput.addEventListener('change', calculatePrice);
-roomTypeInput.addEventListener('change', calculatePrice); // not working yet
 
-form.addEventListener('submit', function(event) {
-    event.preventDefault(); 
 
-    console.log('Booking submitted successfully!');
+form.addEventListener('submit', function (event) {
+
+    console.log("Room:", document.getElementById("hidden-room-name").value);
+    console.log("Total:", document.getElementById("hidden-total-cost").value);
+
 });
+
+calculatePrice();
 
 // profile menu toggle
 function toggleProfileMenu() {
