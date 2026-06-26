@@ -20,6 +20,10 @@ def index():
 def services():
     return render_template("services.html", user=g.user)
 
+@bp.route('/about')
+def about():
+    return render_template("about.html", user=g.user)
+
 @bp.route('/profile')
 @login_required
 def profile():
@@ -53,13 +57,12 @@ def join():
 @login_required
 def booking():
     if request.method == 'POST':
-        typeroom = request.args.get('typeroom')
-        totalcost = request.args.get('totalcost')
+        typeroom = request.form.get('typeroom')
+        totalcost = int(float(request.form.get('totalcost')))
         checkindate = request.form.get('checkindate')
         checkoutdate = request.form.get('checkoutdate')
         specialrequests = request.form.get('specialrequests')
-        # print(f"Booking Details: Room Type: {typeroom}, Total Cost: {totalcost}, Check-in: {checkindate}, Check-out: {checkoutdate}, Special Requests: {specialrequests}")
-        execute('INSERT INTO bookings (id, type, payamt, startdate, enddate, specialrequests) VALUES (%s, %s, %s, %s, %s, %s)',
-                (g.user['id'], typeroom, totalcost, checkindate, checkoutdate, specialrequests))
+        execute('INSERT INTO bookings (id, name, type, payamt, startdate, enddate, specialrequests) VALUES (%s, %s, %s, %s, %s, %s, %s)',
+                (g.user['id'], g.user['username'], typeroom, totalcost, checkindate, checkoutdate, specialrequests))
 
     return render_template("booking.html", user=g.user)

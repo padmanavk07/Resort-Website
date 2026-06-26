@@ -2,7 +2,6 @@ from flask import (
     Blueprint, flash, g, redirect, render_template, request, url_for, current_app
 )
 from werkzeug.exceptions import abort
-import datetime
 
 from resort.auth import admin_required
 from resort.db import query_all, query_one, execute
@@ -16,7 +15,7 @@ bp = Blueprint('admin', __name__, url_prefix='/admin')
 def dashboard():
     applicants = query_all('SELECT * FROM applications WHERE accepted IS NULL')
     bookings = query_all('SELECT * FROM bookings')
-    return render_template("admin/dashboard.html", applicants=applicants, bookings=bookings, datetime=datetime)
+    return render_template("admin/dashboard.html", applicants=applicants, bookings=bookings)
 
 
 @bp.route('/bookings/<int:booking_id>/checkin')

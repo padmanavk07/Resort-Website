@@ -93,9 +93,13 @@
                             <tr>
                                 <td style="color: goldenrod; font-family: monospace;">#{{ booking.bid }}</td>
                                 <td>{{ booking.name }}</td>
-                                <td>{{ booking.type }} <br><small style="color: ivory;">Room 402</small></td>
+                                <td>{{ booking.type }} <br>
+                                    {% if booking.specialrequests %}
+                                    <small style="color: ivory;">Special Request: {{ booking.specialrequests }}</small>
+                                    {% endif %}
+                                </td>
                                 <td>{{ booking.startdate }}, 10:00 AM</td>
-                                <td>{{ booking.enddate + datetime.timedelta(days=1) }}, 8:00 AM</td>
+                                <td>{{ booking.enddate }}, 8:00 AM</td>
                                 {% if booking.ischeckedin %}
                                 <td><span class="badge gold" id="status-1">Checked In</span></td>
                                 <td><button class="btn-action" id="btn-1"><a href="{{ url_for('admin.checkout', booking_id=booking.id) }}">Check Out</a></button></td>
@@ -116,12 +120,13 @@
                     <div class="table-header"><h2>Recent Transactions</h2></div>
                     <table>
                         <thead>
-                            <tr><th>Booking ID</th><th>Amount</th><th>Method</th><th>Status</th></tr>
+                            <tr><th>Booking ID</th><th>Name</th><th>Amount</th><th>Method</th><th>Status</th></tr>
                         </thead>
                         <tbody>
                             {% for booking in bookings[::-1] %}
                             <tr>
                                 <td>{{ booking.bid }}</td>
+                                <td>{{ booking.name }}</td>
                                 <td>${{ booking.payamt }}</td>
                                 <td>{{ booking.paymtd }}</td>
                                 {% if booking.paystatus %}
