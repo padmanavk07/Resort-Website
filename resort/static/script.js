@@ -73,3 +73,100 @@ function checkInGuest(id) {
     button.disabled = true;
     
 }
+// Booking page
+const roomTypes = document.querySelectorAll('.room-select-card');
+const roomRates = {
+    "Oceanfront Villa":1200,
+    "Premium Suite":1000,
+    "Honeymoon Retreat":800
+}
+roomTypes.forEach(item => {
+    item.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        roomTypes.forEach(room => {
+            room.classList.remove('selected');
+            room.querySelector('.btn-select').innerText = 'Select Room';
+        });
+        
+        this.classList.add('selected');
+        this.closest('.room-select-card').querySelector('.btn-select').innerText = 'Selected';
+
+        const roomTypeInput = document.querySelector('.room-select-card.selected');
+        
+    });
+
+    const roomTypeInput = document.querySelector('.room-select-card.selected');
+});
+
+const form = document.getElementById('bookingForm');
+const checkInInput = document.getElementById('checkin');
+const checkOutInput = document.getElementById('checkout');
+const roomTypeInput = document.querySelector('.room-select-card.selected');
+const subTotalPriceDisplay = document.getElementById('display-subtotal');
+const taxesDisplay = document.getElementById('display-taxes');
+const totalPriceDisplay = document.getElementById('display-total');
+const roomNameDisplay = document.getElementById('display-room-name');
+const roomPriceDisplay = document.getElementById('display-room-total');
+const nightsDisplay = document.getElementById('display-nights')
+
+// to set the minimum check-in date to today
+const today = new Date().toISOString().split('T')[0];
+checkInInput.setAttribute('min', today);
+
+// to update minimum checkout date based on check-in
+function updateCheckoutMinDate() {
+    const checkInDate = checkInInput.value;
+    if (checkInDate) {
+        const minCheckOut = new Date(checkInDate);
+        minCheckOut.setDate(minCheckOut.getDate() + 1);
+        
+        const minCheckOutString = minCheckOut.toISOString().split('T')[0];
+        checkOutInput.setAttribute('min', minCheckOutString);
+        
+    }
+}
+
+function calculatePrice() {
+    const checkInDate = new Date(checkInInput.value);
+    const checkOutDate = new Date(checkOutInput.value);
+    // const roomTypeInput = document.querySelector('.room-select-card.selected');
+    const roomType = roomTypeInput.getAttribute('data-room');
+
+    // Only calculate if both dates are selected and valid
+    if (checkInInput.value && checkOutInput.value && checkOutDate > checkInDate) {
+
+        const timeDifference = checkOutDate.getTime() - checkInDate.getTime();
+        const nights = timeDifference / (1000 * 3600 * 24);
+        
+        // Calculate total
+        const rate = roomRates[roomType];
+        const total = nights * rate;
+        
+        // Update the display
+        subTotalPriceDisplay.textContent = `$${total.toFixed(2)}`;
+        taxesDisplay.textContent = `$${(total/10).toFixed(2)}`;
+        totalPriceDisplay.textContent = `$${(total*(1.1)).toFixed(2)}`;
+        roomNameDisplay.textContent = roomType;
+        roomPriceDisplay.textContent = `$${rate}`;
+        nightsDisplay.textContent = `${nights} nights`;
+
+    } else {
+        // Reset to 0 if dates are incomplete
+        subTotalPriceDisplay.textContent = `$0`;
+    }
+}
+
+// event listeners to trigger calculations when inputs change
+checkInInput.addEventListener('change', () => {
+    updateCheckoutMinDate();
+    calculatePrice();
+});
+checkOutInput.addEventListener('change', calculatePrice);
+roomTypeInput.addEventListener('change', calculatePrice); // not working yet
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    console.log('Booking submitted successfully!');
+});
