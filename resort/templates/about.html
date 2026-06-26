@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block title %}Luxury Resort{% endblock %}
+{% block content %}
+
+    <main>
+
+        <section class="about-hero">
+            <div class="about-hero-content fade-up">
+                <h1 class="serif">Resort Name Legacy</h1>
+                <p>Resort's Motto.</p>
+            </div>
+        </section>
+
+        <section class="philosophy fade-up">
+            <h2 class="serif">Our Philosophy</h2>
+            <p>Our resort was designed with a singular vision: to create a space where time slows down, and the boundary between the untouched beauty of nature and uncompromising luxury fades away.</p>
+            
+            <div class="philosophy-quote fade-up">
+                "True luxury is having the space and the time to breathe. It is the unencumbered environment that allows your mind to settle."
+            </div>
+        </section>
+
+        <!-- our vision section -->
+        <section class="vision-section">
+            <div class="container" style="padding: 0;">
+                
+                <div class="vision-row fade-up">
+                    <div class="vision-img">
+                        <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Resort Architecture">
+                    </div>
+                    <div class="vision-content">
+                        <h3 class="serif">Architectural Harmony</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae omnis, molestias excepturi sapiente provident voluptate obcaecati a quam consequuntur aspernatur vero eligendi praesentium corrupti, dolorem laboriosam distinctio similique itaque laborum.</p>
+                    </div>
+                </div>
+
+                <div class="vision-row fade-up">
+                    <div class="vision-img">
+                        <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Local Culture">
+                    </div>
+                    <div class="vision-content">
+                        <h3 class="serif">Rooted in Heritage</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus suscipit, eos hic voluptatibus dolores delectus ducimus cum, repellendus corporis distinctio sed praesentium inventore consectetur eveniet voluptatum ipsa, aut temporibus iste.</p>
+                    </div>
+                </div>
+
+                <div class="vision-row fade-up">
+                    <div class="vision-img">
+                        <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Exquisite Dining">
+                    </div>
+                    <div class="vision-content">
+                        <h3 class="serif">Exquisite Dining</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit expedita, perferendis, voluptatum, eveniet repellat quis odio minus dolores ducimus ratione sit sapiente doloribus hic iure cum consequatur porro? Odit, minus?</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="founder container">
+            <div class="text-center fade-up">
+                <h2 class="section-title">The Visionaries</h2>
+                <p class="section-subtitle">Setting a new standard in ultra-luxury hospitality.</p>
+            </div>
+
+            <div class="founder-card fade-up">
+                <div class="founder-img">
+                    <img src="{{ url_for('static', filename='{{ url_for('static', filename='images/sample.jpeg') }}') }}" alt="Managing Director">
+                </div>
+                <div class="founder-info">
+                    <h3 class="serif">Founder Name</h3>
+                    <h5>Founder & Managing Director</h5>
+                    <p style="color: ivory; line-height: 1.8;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, doloribus. Tempore dolor sequi, mollitia quis iste magni, quidem dolorem distinctio nam eligendi itaque illo accusamus eum sunt ab esse aspernatur.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="staff-team-section container">
+            <div class="text-center fade-up">
+                <h2 class="section-title">The Heart of Our Resort</h2>
+                <p class="section-subtitle">A family of artisans dedicated to your perfect stay.</p>
+            </div>
+
+            <div class="staff-team-content fade-up">
+                <div class="staff-team-img">
+                    <img src="{{ url_for('static', filename='{{ url_for('static', filename='images/sample.jpeg') }}') }}" alt="Resort Staff Team">
+                </div>
+                <div class="staff-team-text">
+                    <h3 class="serif">Our Team</h3>
+                    <p>At the Resort, our team is more than just staff; they are the soul of the resort. Handpicked for their genuine warmth and emotional intelligence, our artisans are trained in the delicate balance of being omnipresent yet invisible.</p>
+                    <p>Whether it is remembering how you take your morning espresso, arranging a seamless surprise anniversary setup, or simply offering a comforting smile after a long day of travel, their dedication goes beyond standard 5-star service.</p>
+                    <p>It is a heartfelt, uncompromising commitment to making you feel recognized, deeply cherished, and entirely at home from the moment you arrive on our shores.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+{% endblock %}

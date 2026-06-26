@@ -952,25 +952,6 @@ tr:hover {
 }
 .btn-submit:hover { background: darkgoldenrod; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
 
-/* For different devices */
-@media (max-width: 1024px) {
-    .hero-content h1 { font-size: 4rem; }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-    .booking-container { grid-template-columns: 1fr; }
-    .summary-sidebar { position: static; margin-top: 2rem; }
-    .room-select-card { flex-direction: column; }
-    .room-img { width: 100%; height: 200px; }
-}
-@media (max-width: 768px) {
-    .nav-links, .nav-btn { display: none; }
-    .triple-bar { display: block; }
-    .hero-content h1 { font-size: 3rem; }
-    .hero-btns { flex-direction: column; }
-    .services-row, .services-row:nth-child(even) { flex-direction: column; text-align: center; gap: 2rem; }
-    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .form-grid { grid-template-columns: 1fr; }
-    .page-header h1 { font-size: 2.5rem; }
-}
 
 /* profile */
 .profile-container{
@@ -1043,4 +1024,239 @@ tr:hover {
 
 .profile-menu a:hover{
     background:rgba(255,255,255,0.02);
+}
+
+
+.about-hero {
+    position: relative;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url("images/sample.jpeg") center/cover no-repeat;
+    background-attachment: fixed;
+}
+.about-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(10, 17, 40, 0.3), #121212);
+}
+.about-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    padding: 0 20px;
+    margin-top: 4rem;
+}
+.about-hero-content h1 {
+    font-size: 5rem;
+    color: aliceblue;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+.about-hero-content p {
+    font-size: 1.2rem;
+    color: goldenrod;
+    font-family: Bodoni Moda, serif;
+    font-style: italic;
+}
+
+/* Philosophy Section */
+.philosophy {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 8rem 20px;
+}
+.philosophy h2 {
+    font-size: 2.5rem;
+    color: goldenrod;
+    margin-bottom: 2rem;
+}
+.philosophy p {
+    font-size: 1.1rem;
+    color: ivory;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+.philosophy-quote {
+    font-size: 1.5rem;
+    color: aliceblue;
+    font-family: Bodoni Moda, serif;
+    font-style: italic;
+    margin: 3rem 0;
+    padding-left: 2rem;
+    border-left: 3px solid goldenrod;
+    text-align: left;
+}
+
+/* our vision section */
+.vision-section {
+    background-color: var(--navy-blue-shade);
+    padding: 6rem 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.vision-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    margin-bottom: 6rem;
+}
+.vision-row:last-child {
+    margin-bottom: 0;
+}
+.vision-row:nth-child(even) {
+    direction: rtl; /* Reverses the layout */
+}
+.vision-row:nth-child(even) div {
+    direction: ltr; /* Keeps the text direction normal */
+}
+.vision-img {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+.vision-img img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    transition: transform 1.2s ease;
+}
+.vision-img:hover img {
+    transform: scale(1.05);
+}
+.vision-content h3 {
+    font-size: 2.2rem;
+    color: goldenrod;
+    margin-bottom: 1.5rem;
+}
+.vision-content p {
+    color: ivory;
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+}
+
+
+/* --- founder Section --- */
+.founder {
+    padding: 8rem 0 4rem 0;
+    background-color: #121212 90%;
+}
+.founder-card {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    background: var(--navy-blue-shade);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 4rem;
+    border-radius: 8px;
+    max-width: 1000px;
+    margin: 4rem auto 0;
+}
+.founder-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid goldenrod;
+    flex-shrink: 0;
+}
+.founder-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.founder-info h3 {
+    font-size: 2rem;
+    color: aliceblue;
+    margin-bottom: 0.5rem;
+}
+.founder-info h5 {
+    color: goldenrod;
+    font-family: Poppins, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+}
+
+
+/* staff-team section */
+.staff-team-section {
+    padding: 4rem 0 8rem 0;
+    background-color: #121212 90%;
+}
+.staff-team-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin: 4rem;
+    background: var(--navy-blue-shade);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+.staff-team-img {
+    height: 100%;
+    min-height: 450px;
+    position: relative;
+}
+.staff-team-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.staff-team-text {
+    padding: 3rem 4rem 3rem 0;
+}
+.staff-team-text h3 {
+    font-size: 2rem;
+    color: goldenrod;
+    margin-bottom: 1.5rem;
+}
+.staff-team-text p {
+    color: ivory;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* For different devices */
+@media (max-width: 1024px) {
+    .hero-content h1 { font-size: 4rem; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .booking-container { grid-template-columns: 1fr; }
+    .summary-sidebar { position: static; margin-top: 2rem; }
+    .room-select-card { flex-direction: column; }
+    .room-img { width: 100%; height: 200px; }
+}
+@media (max-width: 768px) {
+    .nav-links, .nav-btn { display: none; }
+    .triple-bar { display: block; }
+    .hero-content h1 { font-size: 3rem; }
+    .hero-btns { flex-direction: column; }
+    .services-row, .services-row:nth-child(even) { flex-direction: column; text-align: center; gap: 2rem; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .form-grid { grid-template-columns: 1fr; }
+    .page-header h1 { font-size: 2.5rem; }
+    .vision-row, .vision-row:nth-child(even) {
+        grid-template-columns: 1fr;
+        direction: ltr;
+        gap: 3rem;
+    }
+    .vision-img img { height: 400px; }
+    .founder-card { flex-direction: column; text-align: center; padding: 2rem; }
+    .about-hero-content h1 { font-size: 3.5rem; }
+    .staff-team-content { grid-template-columns: 1fr; gap: 0; min-width: 90%; margin: 4rem auto;}
+    .staff-team-img { min-height: 350px;}
+    .staff-team-text { padding: 3rem 2rem; text-align: center; }
 }
