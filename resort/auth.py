@@ -70,7 +70,7 @@ def login():
             if user['admin']:
                 return redirect(url_for('admin.dashboard'))
             else:
-                return redirect(url_for('home.profile'))
+                return redirect(url_for('home.index'))
 
 
 @bp.route('/logout')

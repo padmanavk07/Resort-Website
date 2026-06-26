@@ -58,6 +58,8 @@ def booking():
         checkindate = request.form.get('checkindate')
         checkoutdate = request.form.get('checkoutdate')
         specialrequests = request.form.get('specialrequests')
-        print(f"Booking Details: Room Type: {typeroom}, Total Cost: {totalcost}, Check-in: {checkindate}, Check-out: {checkoutdate}, Special Requests: {specialrequests}")
+        # print(f"Booking Details: Room Type: {typeroom}, Total Cost: {totalcost}, Check-in: {checkindate}, Check-out: {checkoutdate}, Special Requests: {specialrequests}")
+        execute('INSERT INTO bookings (id, type, payamt, startdate, enddate, specialrequests) VALUES (%s, %s, %s, %s, %s, %s)',
+                (g.user['id'], typeroom, totalcost, checkindate, checkoutdate, specialrequests))
 
     return render_template("booking.html", user=g.user)

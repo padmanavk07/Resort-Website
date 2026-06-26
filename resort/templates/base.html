@@ -35,35 +35,34 @@
             {% if user and user['admin'] %}
                 <a href="{{ url_for('admin.dashboard') }}" class="btn btn-gold">DASHBOARD</a>
             {% elif user and not user['admin'] %}
-                <a href="{{ url_for('home.profile') }}" class="btn btn-gold">PROFILE</a>
+                <div class="profile-container">
+    
+                    <div onclick="toggleProfileMenu()" class="profile-btn" id="profileBtn">
+                        <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Profile">
+                    </div>
+    
+                    <div class="profile-menu" id="profileMenu">
+    
+                        <div class="profile-header">
+                            <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Profile">
+                            <h3>{{ user.username }}</h3>
+                            <p>{{ user.email }}</p>
+                        </div>
+    
+                        <hr>
+    
+                        <a href="#">My Bookings</a>
+                        <a href="{{ url_for('home.booking') }}">Book More</a>
+                        <a href="#">Account Settings</a>
+                        <a href="{{ url_for('auth.logout') }}">Logout</a>
+    
+                    </div>
+    
+                </div>
             {% else %}
-                <a href="{{ url_for('home.booking') }}" class="btn btn-gold">BOOK NOW</a>
+                <a href="{{ url_for('auth.register') }}" class="btn btn-gold">REGISTER</a>
             {% endif %}
 
-            <div class="profile-container">
-
-                <div onclick="toggleProfileMenu()" class="profile-btn" id="profileBtn">
-                    <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Profile">
-                </div>
-
-                <div class="profile-menu" id="profileMenu">
-
-                    <div class="profile-header">
-                        <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Profile">
-                        <h3>Name</h3>
-                        <p>name@example.com</p>
-                    </div>
-
-                    <hr>
-
-                    <a href="#">My Bookings</a>
-                    <a href="#">Book More</a>
-                    <a href="#">Account Settings</a>
-                    <a href="#">Logout</a>
-
-                </div>
-
-            </div>
 
             <h1 onclick=showSidebar() class="triple-bar">≡</h1>
         </div>
