@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resort Image Gallery</title>
+{% extends "base.html" %}
+{% block title %}Luxury Resort - Gallery{% endblock %}
+{% block style %}
     <style>
         /* CSS Variables for Navy Blue and Gold Theme */
         :root {
@@ -122,14 +119,9 @@
             }
         }
     </style>
-</head>
-<body>
+{% endblock %}
 
-    <header>
-        <h1>Luxury Haven Resort</h1>
-        <p>Explore our world-class amenities and breathtaking views</p>
-    </header>
-
+{% block content %}
     <main class="gallery-container">
 
         <section class="category-section">
@@ -222,5 +214,4 @@
 
     </main>
 
-</body>
-</html>
+{% endblock %}
