@@ -24,6 +24,10 @@ def services():
 def about():
     return render_template("about.html", user=g.user)
 
+@bp.route('/gallery')
+def gallery():
+    return render_template("image.html", user=g.user)
+
 @bp.route('/profile')
 @login_required
 def profile():
@@ -56,6 +60,8 @@ def join():
 @bp.route('/booking', methods=['GET', 'POST'])
 @login_required
 def booking():
+    ubookings = query_all(f'SELECT bid, type, payamt, startdate, enddate FROM bookings WHERE id={g.user['id']}')
+
     if request.method == 'POST':
         typeroom = request.form.get('typeroom')
         totalcost = int(float(request.form.get('totalcost')))
@@ -65,4 +71,4 @@ def booking():
         execute('INSERT INTO bookings (id, name, type, payamt, startdate, enddate, specialrequests) VALUES (%s, %s, %s, %s, %s, %s, %s)',
                 (g.user['id'], g.user['username'], typeroom, totalcost, checkindate, checkoutdate, specialrequests))
 
-    return render_template("booking.html", user=g.user)
+    return render_template("booking.html", user=g.user, ubookings=ubookings)

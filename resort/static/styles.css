@@ -935,69 +935,240 @@ tr:hover {
 .step-header h2 { font-size: 1.8rem; color: aliceblue; margin: 0; }
 
 /* Form */
-.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-.form-group { display: flex; flex-direction: column; }
-.form-group label { font-size: 0.85rem; color: ivory; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    color: ivory;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 .form-control {
-    background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
-    color: aliceblue; padding: 12px 15px; border-radius: 4px;
-    font-family: Poppins, sans-serif; font-size: 1rem; outline: none; transition: var(--transition);
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: aliceblue;
+    padding: 12px 15px;
+    border-radius: 4px;
+    font-family: Poppins, sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transition);
     color-scheme: dark;
 }
-.form-control:focus { border-color: goldenrod; background: rgba(0,0,0,0.5); }
+
+.form-control:focus {
+    border-color: goldenrod;
+    background: rgba(0, 0, 0, 0.5);
+}
 
 /* Room selection cards */
 .room-select-card {
-    display: flex; border: 1px solid rgba(255,255,255,0.05); border-radius: 6px;
-    background: rgba(0,0,0,0.2); overflow: hidden; margin-bottom: 1.5rem; transition: var(--transition);
+    display: flex;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    transition: var(--transition);
 }
-.room-select-card.selected { border-color: goldenrod; background: rgba(212, 175, 55, 0.05); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
-.room-img { width: 200px; overflow: hidden; }
-.room-img img { width: 100%; height: 100%; object-fit: cover; }
-.room-details { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
-.room-details h3 { font-size: 1.4rem; color: aliceblue; margin: 0 0 5px 0; }
-.room-details p { color: ivory; font-size: 0.85rem; margin: 0 0 10px 0; }
-.room-price-row { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
-.room-price-row .price { font-family: Poppins, sans-serif; color: goldenrod; font-size: 1.2rem; }
+
+.room-select-card.selected {
+    border-color: goldenrod;
+    background: rgba(212, 175, 55, 0.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.room-img {
+    width: 200px;
+    overflow: hidden;
+}
+
+.room-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.room-details {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.room-details h3 {
+    font-size: 1.4rem;
+    color: aliceblue;
+    margin: 0 0 5px 0;
+}
+
+.room-details p {
+    color: ivory;
+    font-size: 0.85rem;
+    margin: 0 0 10px 0;
+}
+
+.room-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.room-price-row .price {
+    font-family: Poppins, sans-serif;
+    color: goldenrod;
+    font-size: 1.2rem;
+}
 
 .btn-select {
-    background: transparent; color: goldenrod; border: 1px solid goldenrod;
-    padding: 8px 20px; font-family: Poppins, sans-serif; font-size: 0.85rem; text-transform: uppercase;
-    letter-spacing: 1px; border-radius: 4px; transition: var(--transition);
+    background: transparent;
+    color: goldenrod;
+    border: 1px solid goldenrod;
+    padding: 8px 20px;
+    font-family: Poppins, sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: var(--transition);
 }
-.room-select-card.selected .btn-select { background: goldenrod; color: var(--navy-blue-shade); }
+
+.room-select-card.selected .btn-select {
+    background: goldenrod;
+    color: var(--navy-blue-shade);
+}
 
 /* Checkbox */
-.checkbox-wrapper { display: flex; align-items: center; gap: 15px; }
-.checkbox-wrapper input[type="checkbox"] { display: none; }
-.custom-checkbox { width: 22px; height: 22px; border: 1px solid goldenrod; border-radius: 3px; display: flex; align-items: center; justify-content: center; }
-.checkbox-wrapper input[type="checkbox"]:checked + .custom-checkbox::after { content: '\f00c'; font-family: 'Font Awesome 5 Free'; font-weight: 900; color: goldenrod; font-size: 12px; }
-
-.summary-sidebar { position: sticky; top: 120px; }
-.summary-card {
-    background: var(--navy-blue-shade); border: 1px solid goldenrod; border-radius: 8px;
-    padding: 2.5rem; position: relative; overflow: hidden;
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-.summary-card h2 { font-size: 1.6rem; color: goldenrod; margin: 0 0 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 1rem; }
+.checkbox-wrapper input[type="checkbox"] {
+    display: none;
+}
 
-.summary-row { display: flex; justify-content: space-between; margin-bottom: 1rem; font-size: 0.95rem; }
-.summary-row.dates { color: aliceblue; font-weight: 500; }
-.summary-row .label { color: ivory; }
-.summary-row .value { color: aliceblue; text-align: right; }
+.custom-checkbox {
+    width: 22px;
+    height: 22px;
+    border: 1px solid goldenrod;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-.summary-divider { height: 1px; background: rgba(255,255,255,0.1); margin: 1.5rem 0; }
+.checkbox-wrapper input[type="checkbox"]:checked + .custom-checkbox::after {
+    content: '\f00c';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: goldenrod;
+    font-size: 12px;
+}
 
-.total-row { display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; }
-.total-row .label { font-size: 1.2rem; color: aliceblue; font-family: Poppins, sans-serif; }
-.total-row .value { font-size: 2rem; color: goldenrod; font-family: Poppins, sans-serif; }
+.summary-sidebar {
+    position: sticky;
+    top: 120px;
+}
+
+.summary-card {
+    background: var(--navy-blue-shade);
+    border: 1px solid goldenrod;
+    border-radius: 8px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.summary-card h2 {
+    font-size: 1.6rem;
+    color: goldenrod;
+    margin: 0 0 1.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 1rem;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.summary-row.dates {
+    color: aliceblue;
+    font-weight: 500;
+}
+
+.summary-row .label {
+    color: ivory;
+}
+
+.summary-row .value {
+    color: aliceblue;
+    text-align: right;
+}
+
+.summary-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 1.5rem 0;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.total-row .label {
+    font-size: 1.2rem;
+    color: aliceblue;
+    font-family: Poppins, sans-serif;
+}
+
+.total-row .value {
+    font-size: 2rem;
+    color: goldenrod;
+    font-family: Poppins, sans-serif;
+}
 
 .btn-submit {
-    width: 100%; padding: 15px; margin-top: 2rem; background: goldenrod; color: var(--navy-blue-shade);
-    border: none; font-family: Poppins, sans-serif; font-size: 1rem; text-transform: uppercase;
-    letter-spacing: 2px; font-weight: 600; border-radius: 4px; transition: var(--transition);
+    width: 100%;
+    padding: 15px;
+    margin-top: 2rem;
+    background: goldenrod;
+    color: var(--navy-blue-shade);
+    border: none;
+    font-family: Poppins, sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: var(--transition);
 }
-.btn-submit:hover { background: darkgoldenrod; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+
+.btn-submit:hover {
+    background: darkgoldenrod;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
 
 
 /* profile */

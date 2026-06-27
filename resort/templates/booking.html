@@ -7,11 +7,12 @@
             <div class="table-header"><h2>My Bookings</h2></div>
             <table>
                 <thead>
-                    <tr><th>Booking ID</th><th>Room Type</th><th>Amount</th><th>Check-In Date</th></tr>
+                    <tr><th>Booking ID</th><th>Room Type</th><th>Amount</th><th>Check-In Date</th><th>Check-Out-Date</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>#A-1001</td><td>Oceanfront Villa</td><td>$3,500</td><td>Aug 2, 2026</td></td></tr>
-                    <tr><td>#A-1002</td><td>Family Suite</td><td>$6,000</td><td>Sep 30, 2026</td></tr>
+                    {% for booking in ubookings %}
+                    <tr><td>{{ booking.bid }}</td><td>{{ booking.type }}</td><td>{{ booking.payamt }}</td><td>{{ booking.startdate }}</td><td>{{ booking.enddate }}</td></tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>

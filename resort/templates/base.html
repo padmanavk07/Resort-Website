@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    {% block style %}{% endblock %}
 </head>
 <body>
 
@@ -15,10 +16,9 @@
                 <li><a href="{{ url_for('home.index') }}">HOME</a></li>
                 <li><a href="{{ url_for('home.about') }}">ABOUT US</a></li>
                 <li><a href="{{ url_for('home.services') }}">SERVICES</a></li>
-                <li><a href="#">GALLERY</a></li>
+                <li><a href="{{ url_for('home.gallery') }}">GALLERY</a></li>
                 <li><a href="#">REVIEWS</a></li>
                 <li><a href="{{ url_for('home.join') }}">CAREERS</a></li>
-                <li><a href="#">PACKAGES</a></li>
             </ul>
 
             <ul class="side-bar">
@@ -26,10 +26,9 @@
                 <li><a href="{{ url_for('home.index') }}">HOME</a></li>
                 <li><a href="{{ url_for('home.about') }}">ABOUT US</a></li>
                 <li><a href="{{ url_for('home.services') }}">SERVICES</a></li>
-                <li><a href="#">GALLERY</a></li>
+                <li><a href="{{ url_for('home.gallery') }}">GALLERY</a></li>
                 <li><a href="#">REVIEWS</a></li>
                 <li><a href="{{ url_for('home.join') }}">CAREERS</a></li>
-                <li><a href="#">PACKAGES</a></li>
             </ul>
 
             {% if user and user['admin'] %}
@@ -51,7 +50,7 @@
     
                         <hr>
     
-                        <a href="#">My Bookings</a>
+                        <a href="{{ url_for('home.booking') }}">My Bookings</a>
                         <a href="{{ url_for('home.booking') }}">Book More</a>
                         <a href="#">Account Settings</a>
                         <a href="{{ url_for('auth.logout') }}">Logout</a>
