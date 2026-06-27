@@ -171,6 +171,45 @@ header {
     color: goldenrod;
 }
 
+.pop-up {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    background-color: var(--navy-blue-shade);
+    color: aliceblue;
+
+    width: 400px;
+    height: 200px;
+    border: 2px solid goldenrod;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: space-between;
+    z-index: 9999;
+
+    animation: popup 0.2s ease-in-out;
+}
+
+@keyframes popup {
+    0% { scale: 0.1; }
+    100% { scale: 1; }
+    
+}
+
+.pop-up-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 90%;
+    padding: 10px 25px;
+}
+.pop-up-content h1 {
+    margin-top: 15px;
+}
+.pop-up.hidden {
+    display: none;
+}
+
 /* Hero Section */
 .hero {
     position: relative;
@@ -1318,4 +1357,174 @@ tr:hover {
     .stats-card { padding: 1.25rem; }
     .table-container { overflow-x: auto; }
     table { min-width: 700px; }
+
+    .payment-method {
+        width: 95%; 
+    }
+    .payment-header,
+    .payment-body,
+    .payment-footer {
+        padding: 1.5rem 1rem; 
+    }
+    .payment-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .pay-option {
+        padding: 1rem;
+    }
+    .payment-footer {
+        flex-direction: column-reverse; /* Puts 'Cancel' below 'Submit' */
+        gap: 1rem;
+    }
+    .btn-submit, 
+    .btn-cancel {
+        width: 100%;
+    }
 }
+
+/* Payment section */
+.payment-section {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 17, 40, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.payment-section.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.payment-method {
+    background: var(--navy-blue-shade);
+    border: 1px solid goldenrod;
+    border-radius: 0.5rem;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-header {
+    padding: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.payment-header h2 {
+    margin: 0;
+    color: aliceblue;
+    font-size: 1.5rem;
+}
+
+.amount-due {
+    color: ivory;
+    font-size: 0.9rem;
+}
+
+.amount-due span {
+    color: goldenrod;
+    font-size: 1.2rem;
+    font-family: Bodoni Moda, serif;
+    margin-left: 5px;
+}
+
+.payment-body {
+    padding: 2rem;
+}
+
+.payment-body p {
+    color: ivory; 
+    margin-bottom: 1.5rem;
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.pay-option {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: aliceblue;
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    font-family: Poppins, sans-serif;
+    font-size: 1rem;
+    text-align: left;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.pay-option i {
+    font-size: 1.2rem;
+    color: ivory;
+    transition: var(--transition);
+    width: 25px;
+    text-align: center;
+}
+
+.pay-option:hover {
+    border-color: darkgoldenrod;
+}
+
+.pay-option.active {
+    border-color: goldenrod;
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.pay-option.active i {
+    color: goldenrod;
+}
+
+.payment-footer {
+    padding: 1.5rem 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-cancel {
+    background: transparent;
+    color: ivory;
+    border: 1px solid ivory;
+    font-family: Poppins, sans-serif;
+    font-size: 0.9rem;
+    padding: 10px;
+    transition: var(--transition);
+    text-transform: uppercase;
+}
+
+.btn-cancel:hover {
+    color: goldenrod;
+    border-color: goldenrod;
+}
+
+.btn-submit {
+    margin-top: 0;
+    padding: 12px 30px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

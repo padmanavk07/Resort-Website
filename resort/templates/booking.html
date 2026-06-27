@@ -169,6 +169,49 @@
         </aside>
     </form>
 
+    <div class="payment-section" id="paymentsection">
+        <div class="payment-method">
+            
+            <div class="payment-header">
+                <h2 class="serif">Complete Reservation</h2>
+                <div class="amount-due">Total: <span id="amount-due">$1,320.00</span></div>
+            </div>
+            
+            <div class="payment-body">
+                <p>Select your preferred payment method:</p>
+                
+                <div class="payment-options">
+                    <button type="button" class="pay-option active" data-method="card">
+                         Credit / Debit Card
+                    </button>
+                    <button type="button" class="pay-option" data-method="upi">
+                         UPI
+                    </button>
+                    <button type="button" class="pay-option" data-method="netbanking">
+                         Net Banking
+                    </button>
+                    <button type="button" class="pay-option" data-method="checkin">
+                         Pay at Check-in
+                    </button>
+                </div>
+            </div>
 
+            <div class="payment-footer">
+                <button type="button" class="btn-cancel" id="cancelPayment">Cancel</button>
+                <button type="button" class="btn-submit" id="processPayment">
+                    <span id="payBtnText">Pay $1,320.00</span>
+                </button>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="pop-up hidden">
+        <div class="pop-up-content">
+            <h1 id="pop-up-title">SUCCESS</h1>
+            <p id="pop-up-message">Your booking was successful!</p>
+            <button id="pop-up-close" class="btn btn-gold" onclick=closePopup()>Close</button>
+        </div>
+    </div>
     
 {% endblock %}

@@ -74,6 +74,26 @@ function checkInGuest(id) {
     
 }
 
+// Profile menu
+function toggleProfileMenu() {
+    const profileBtn = document.getElementById('profileBtn');
+    const profileMenu = document.getElementById('profileMenu');
+
+    profileMenu.classList.toggle('active');
+
+};
+
+// Popup functions
+function showPopup() {
+    const popup = document.querySelector(".pop-up.hidden");
+    popup.classList.remove("hidden");
+}
+function closePopup() {
+    const popup = document.querySelector(".pop-up");
+    popup.classList.add("hidden");
+    
+}
+
 // Booking page     
 
 const roomTypes = document.querySelectorAll('.room-select-card');
@@ -89,6 +109,13 @@ const totalPriceDisplay = document.getElementById('display-total');
 const roomNameDisplay = document.getElementById('display-room-name');
 const roomPriceDisplay = document.getElementById('display-room-total');
 const nightsDisplay = document.getElementById('display-nights');
+
+const paymentSection = document.getElementById('paymentsection');
+const cancelPaymentBtn = document.getElementById('cancelPayment');
+const processPaymentBtn = document.getElementById('processPayment');
+const payBtnText = document.getElementById('payBtnText');
+
+const payOptions = document.querySelectorAll('.pay-option');
 
 // minimum date
 const today = new Date().toISOString().split('T')[0];
@@ -182,8 +209,11 @@ function calculatePrice() {
     document.getElementById("hidden-room-name").value = roomName;
     document.getElementById("hidden-total-cost").value = grandTotal.toFixed(2);
 
-}
+    document.getElementById("amount-due").innerText = `$${grandTotal.toFixed(2)}`;
+    document.getElementById('payBtnText').innerText = `Pay ${document.getElementById("amount-due").innerText}`;
 
+
+}
 checkInInput.addEventListener('change', () => {
     updateCheckoutMinDate();
     calculatePrice();
@@ -192,19 +222,38 @@ checkInInput.addEventListener('change', () => {
 checkOutInput.addEventListener('change', calculatePrice);
 
 
-form.addEventListener('submit', function (event) {
-
-    console.log("Room:", document.getElementById("hidden-room-name").value);
-    console.log("Total:", document.getElementById("hidden-total-cost").value);
+form.addEventListener('submit', (event) => {
+    paymentSection.classList.add('active');
 
 });
 
-calculatePrice();
+cancelPaymentBtn.addEventListener('click', () => {
+    paymentSection.classList.remove('active');
+});
 
-// profile menu toggle
-function toggleProfileMenu() {
-    const profileBtn = document.getElementById('profileBtn');
-    const profileMenu = document.getElementById('profileMenu');
+payOptions.forEach(option => {
+    option.addEventListener('click', () => {
 
-    profileMenu.classList.toggle('active');
-};
+        payOptions.forEach(opt => opt.classList.remove('active'));
+        option.classList.add('active');
+        
+        const method = option.getAttribute('data-method');
+        payBtnText.innerText = method === 'checkin' ? "Confirm Booking" : `Pay ${document.getElementById("amount-due").innerText}`;
+    });
+});
+
+processPaymentBtn.addEventListener('click', () => {
+
+    payBtnText.innerText = "Processing...";
+    
+    setTimeout(() => {
+        paymentSection.classList.remove('active'); 
+        showPopup();   
+        
+        processPaymentBtn.style.pointerEvents = 'auto';
+        
+        // Reset pay btn text
+        const activeMethod = document.querySelector('.pay-option.active').getAttribute('data-method');
+        payBtnText.innerText = activeMethod === 'checkin' ? "Confirm Booking" : `Pay ${document.getElementById("amount-due").innerText}`;
+    }, 2000); // 2s processing delay
+});
