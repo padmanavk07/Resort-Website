@@ -1699,3 +1699,152 @@ tr:hover {
     justify-content: center;
 }
 
+/* Reviews Page */
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h1 {
+    font-size: 2.5rem;
+    color: goldenrod;
+    margin-bottom: 0.5rem;
+}
+
+.section-header p {
+    color: ivory;
+    font-size: 1.1rem;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+
+.review-card {
+    background: var(--glass-bg);
+    padding: 2.5rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    border-top: 3px solid goldenrod;
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.stars {
+    color: goldenrod;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.review-text {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    color: ivory;
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid ivory;
+    padding-top: 1rem;
+}
+
+.reviewer-name {
+    font-weight: bold;
+    font-family: Bodoni Moda, serif;
+    color: goldenrod;
+}
+
+.reviewer-location {
+    font-size: 0.85rem;
+    color: ivory;
+}
+
+.feedback-section {
+    background-color: var(--glass-bg);
+    color: ivory;
+    padding: 4rem 2rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+}
+
+.feedback-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.feedback-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.feedback-header h2 {
+    font-size: 2rem;
+    color: goldenrod;
+    margin-bottom: 0.5rem;
+}
+
+    .rating-input {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.rating-input input {
+    display: none;
+}
+
+.rating-input label {
+    cursor: pointer;
+    font-size: 2rem;
+    color: rgba(255,255,255,0.2);
+    transition: color 0.2s ease;
+    margin: 0;
+}
+
+.rating-input label:hover,
+.rating-input label:hover ~ label,
+.rating-input input:checked ~ label {
+    color: goldenrod;
+}
+
+.submit-review {
+    width: 100%;
+    padding: 15px;
+    margin-top: 2rem;
+    background: goldenrod;
+    color: var(--navy-blue-shade);
+    border: none;
+    font-family: Poppins, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: var(--transition);
+    
+}
+
+.submit-review:hover {
+    background-color: darkgoldenrod;
+}
+
+#success-message {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(197, 168, 128, 0.1);
+    border: 1px solid goldenrod;
+    color: goldenrod;
+    margin-top: 2rem;
+}

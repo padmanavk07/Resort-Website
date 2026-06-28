@@ -257,3 +257,16 @@ processPaymentBtn.addEventListener('click', () => {
         payBtnText.innerText = activeMethod === 'checkin' ? "Confirm Booking" : `Pay ${document.getElementById("amount-due").innerText}`;
     }, 2000); // 2s processing delay
 });
+
+// Reviews Page
+
+const reviewForm = document.getElementById("review-form");
+const successMessage = document.getElementById("success-message");
+reviewForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    reviewForm.reset();
+    reviewForm.style.display = "none";
+    successMessage.style.display = "block";
+
+});
