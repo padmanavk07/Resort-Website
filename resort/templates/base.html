@@ -67,13 +67,19 @@
         </div>
     </header>
 
-    <div class="pop-up hidden">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="pop-up">
+        {% for category, message in messages %}
         <div class="pop-up-content">
-            <h1 id="pop-up-title">SUCCESS</h1>
-            <p id="pop-up-message">Your action was completed successfully!</p>
+            <h1 id="pop-up-title">{{ category }}</h1>
+            <p id="pop-up-message">{{ message }}</p>
             <button id="pop-up-close" class="btn btn-gold" onclick=closePopup()>Close</button>
         </div>
+        {% endfor %}
     </div>
+    {% endif %}
+    {% endwith %}
 
     {% block content %}{% endblock %}
 

@@ -40,9 +40,10 @@ def register():
                 'INSERT INTO users (username, password, email, phoneno) VALUES (%s, %s, %s, %s)',
                 (username, generate_password_hash(password), email, phoneno)
             )
+            flash('Registration successful! Please log in.', 'success')
             return redirect(url_for('home.index'))
 
-        flash(error)
+        flash(error, 'error')
 
     return render_template('auth/register.html')
 
@@ -57,25 +58,28 @@ def login():
             'SELECT * FROM users WHERE email = %s', (email,)
         )
         if user is None:
-            error = 'Account with that email does not exist.'
+            flash('Account with that email does not exist.', 'error')
             return redirect(url_for('auth.register'))
         
         elif not check_password_hash(user['password'], password):
-            error = 'Incorrect password.'
+            flash('Incorrect password.', 'error')
             return redirect(url_for('home.index'))
 
         if error is None:
             session.clear()
             session['user_id'] = user['id']
             if user['admin']:
+                flash('Welcome Admin', 'success')
                 return redirect(url_for('admin.dashboard'))
             else:
+                flash('Login successful!', 'success')
                 return redirect(url_for('home.index'))
 
 
 @bp.route('/logout')
 def logout():
     session.clear()
+    flash('You have been logged out.', 'success')
     return redirect(url_for('home.index'))
 
 

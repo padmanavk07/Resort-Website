@@ -38,6 +38,7 @@ def reviews():
         feedback = request.form.get('feedback')
         # print(f"Received review from {name} ({email}) in {location} with rating {rating}: {feedback}")
         execute('INSERT INTO reviews (name, email, location, rating, feedback) VALUES (%s, %s, %s, %s, %s)', (name, email, location, rating, feedback))
+        flash('Thank you for your review!', 'success')
     
     reviews = query_all('SELECT * FROM reviews ORDER BY id DESC')
     return render_template("reviews.html", user=g.user, reviews=reviews)
@@ -64,10 +65,10 @@ def join():
         cletter = request.form.get('cletter')
         resume = request.files['resume']
         resume_url = upload_resume(resume)
-        print(f"Resume URL: {resume_url}")  # Debugging line to check the resume URL
 
         execute('INSERT INTO applications (fname, lname, email, phone, position, exp, cletter, resume) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)',
                 (fname, lname, email, phone, position, exp, cletter, resume_url))
+        flash('Application submitted successfully!', 'success')
     return render_template("joinfam.html")
 
 
@@ -84,5 +85,6 @@ def booking():
         specialrequests = request.form.get('specialrequests')
         execute('INSERT INTO bookings (id, name, type, payamt, startdate, enddate, specialrequests) VALUES (%s, %s, %s, %s, %s, %s, %s)',
                 (g.user['id'], g.user['username'], typeroom, totalcost, checkindate, checkoutdate, specialrequests))
+        flash('Booking successful!', 'success')
 
     return render_template("booking.html", user=g.user, ubookings=ubookings)
