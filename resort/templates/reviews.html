@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Luxury Resort{% endblock %}
+{% block title %}Luxury Resort - Reviews{% endblock %}
 {% block content %}
 
     <div class="container">
@@ -9,33 +9,16 @@
         </div>
 
         <div class="reviews-grid">
-
+            {% for review in reviews %}
             <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p class="review-text">"An unforgettable experience! The staff was incredibly attentive, and the amenities exceeded our expectations. Highly recommend!"</p>
+                <div class="stars">{% for i in range(review.rating) %}★{% endfor %}</div>
+                <p class="review-text">{{ review.feedback }}</p>
                 <div class="reviewer-info">
-                    <span class="reviewer-name">Padmanav K</span>
-                    <span class="reviewer-location">Bhubaneswar, India</span>   
+                    <span class="reviewer-name">{{ review.name }}</span>
+                    <span class="reviewer-location">{{ review.location }}</span>   
                 </div>
             </div>
-            
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p class="review-text">"Beatiful grounds and exceptional spa services. A true 5-star luxury resort!"</p>
-                <div class="reviewer-info">
-                    <span class="reviewer-name">Om Sai</span>
-                    <span class="reviewer-location">Bhubaneswar, India</span>   
-                </div>
-            </div>
-            
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p class="review-text">"An unforgettable experience! The staff was incredibly attentive, and the amenities exceeded our expectations. And.. they got me charizard!"</p>
-                <div class="reviewer-info">
-                    <span class="reviewer-name">Padmanav K</span>
-                    <span class="reviewer-location">Bhubaneswar, India</span>   
-                </div>
-            </div>
+            {% endfor %}
         
         </div>
 
@@ -46,7 +29,7 @@
                     <p>We value your feedback to help us improve the experience</p>
                 </div>
 
-                <form id="review-form">
+                <form id="review-form" action="{{ url_for('home.reviews') }}" method="post">
                     <div class="form-group">
                         <label for="name">Full Name</label>
                         <input type="text" id="name" name="name" class= "form-control" required>
@@ -83,6 +66,7 @@
                         <label for="feedback">Your Review</label>
                         <textarea
                             id="feedback"
+                            name="feedback"
                             class="form-control"
                             rows="6"
                             required

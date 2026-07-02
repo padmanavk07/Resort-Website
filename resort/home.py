@@ -28,6 +28,20 @@ def about():
 def gallery():
     return render_template("image.html", user=g.user)
 
+@bp.route('/reviews', methods=['GET', 'POST'])
+def reviews():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        email = request.form.get('email')
+        location = request.form.get('location')
+        rating = request.form.get('rating')
+        feedback = request.form.get('feedback')
+        # print(f"Received review from {name} ({email}) in {location} with rating {rating}: {feedback}")
+        execute('INSERT INTO reviews (name, email, location, rating, feedback) VALUES (%s, %s, %s, %s, %s)', (name, email, location, rating, feedback))
+    
+    reviews = query_all('SELECT * FROM reviews ORDER BY id DESC')
+    return render_template("reviews.html", user=g.user, reviews=reviews)
+
 @bp.route('/profile')
 @login_required
 def profile():
