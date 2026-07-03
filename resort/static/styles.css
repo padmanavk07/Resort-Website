@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap");
+
 :root {
     --navy-blue-shade: #0A1128;
     --glass-bg: rgba(10, 17, 40, 0.6);
@@ -12,7 +14,7 @@
 }
 
 body {
-    font-family: Poppins, sans-serif;
+    font-family: Manrope;
     background-color: #121212;
     color: ivory;
     line-height: 1.6;
@@ -21,7 +23,7 @@ body {
 }
 
 h1, h2, h3, h4, .serif {
-    font-family: Bodoni Moda, serif;
+    font-family: Cormorant Garamond;
     font-weight: 400;
 }
 
@@ -64,7 +66,7 @@ img {
 .btn {
     display: inline-block;
     padding: min(12px, 1.5%) min(32px, 2.5%);
-    font-family: Poppins, sans-serif;
+    font-family: Manrope;
     font-size: 0.9rem;
     letter-spacing: 2px;
     border: 1px solid goldenrod;
@@ -123,7 +125,7 @@ header {
     margin: 0 auto;
 }
 .logo {
-    font-family: Bodoni Moda, serif;
+    font-family: Cormorant Garamond;
     font-size: min(2rem, 5vw);
     color: goldenrod;
     letter-spacing: 3px
@@ -140,6 +142,10 @@ header {
 }
 .nav-links a:hover { 
     color: goldenrod; 
+}
+
+.page.active {
+    color: goldenrod;
 }
 
 .triple-bar { 
@@ -165,7 +171,7 @@ header {
 .side-bar li {
     width: 100%;
     margin: 0.5rem;
-    font-family: Poppins, sans-serif;
+    font-family: Manrope;
 }
 .side-bar li:hover {
     color: goldenrod;
@@ -255,7 +261,7 @@ header {
     color: goldenrod;
     font-style: italic;
     margin-bottom: 2.5rem;
-    font-family: Bodoni Moda, serif;
+    font-family: Cormorant Garamond;
 }
 .hero-btns {
     display: flex;
@@ -379,7 +385,7 @@ form input {
     color: ivory;
     padding: 10px 0;
     font-size: 1rem;
-    font-family: Poppins, sans-serif;
+    font-family: Manrope;
     outline: none;
     transition: var(--transition);
 }
@@ -414,7 +420,7 @@ footer {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
     color: white;
-    font-family: Poppins, sans-serif;
+    font-family: Manrope;
     letter-spacing: 1px;
 }
 .footer-col ul li { 
@@ -753,7 +759,7 @@ footer {
     background: transparent; 
     border: none; 
     color: ivory; 
-    font-family: Poppins, sans-serif; 
+    font-family: Manrope; 
     outline: none; 
     color-scheme: dark; 
 }
@@ -930,7 +936,7 @@ tr:hover {
     width: 35px; height: 35px; border-radius: 50%;
     background: rgba(212, 175, 55, 0.1); border: 1px solid goldenrod;
     color: goldenrod; display: flex; align-items: center; justify-content: center;
-    font-family: Bodoni Moda, serif; font-size: 1.2rem; margin-right: 15px;
+    font-family: Cormorant Garamond; font-size: 1.2rem; margin-right: 15px;
 }
 .step-header h2 { font-size: 1.8rem; color: aliceblue; margin: 0; }
 
@@ -960,7 +966,7 @@ tr:hover {
     color: aliceblue;
     padding: 12px 15px;
     border-radius: 4px;
-    font-family: Poppins, sans-serif;
+    font-family: Manrope;
     font-size: 1rem;
     outline: none;
     transition: var(--transition);
@@ -1028,7 +1034,7 @@ tr:hover {
 }
 
 .room-price-row .price {
-    font-family: Poppins, sans-serif;
+    font-family: Manrope;
     color: goldenrod;
     font-size: 1.2rem;
 }
@@ -1038,7 +1044,7 @@ tr:hover {
     color: goldenrod;
     border: 1px solid goldenrod;
     padding: 8px 20px;
-    font-family: Poppins, sans-serif;
+    font-family: Manrope;
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -1139,13 +1145,13 @@ tr:hover {
 .total-row .label {
     font-size: 1.2rem;
     color: aliceblue;
-    font-family: Poppins, sans-serif;
+    font-family: Manrope;
 }
 
 .total-row .value {
     font-size: 2rem;
     color: goldenrod;
-    font-family: Poppins, sans-serif;
+    font-family: Manrope;
 }
 
 .btn-submit {
@@ -1155,7 +1161,7 @@ tr:hover {
     background: goldenrod;
     color: var(--navy-blue-shade);
     border: none;
-    font-family: Poppins, sans-serif;
+    font-family: Manrope;
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -1276,7 +1282,7 @@ tr:hover {
 .about-hero-content p {
     font-size: 1.2rem;
     color: goldenrod;
-    font-family: Bodoni Moda, serif;
+    font-family: Cormorant Garamond;
     font-style: italic;
 }
 
@@ -1301,7 +1307,7 @@ tr:hover {
 .philosophy-quote {
     font-size: 1.5rem;
     color: aliceblue;
-    font-family: Bodoni Moda, serif;
+    font-family: Cormorant Garamond;
     font-style: italic;
     margin: 3rem 0;
     padding-left: 2rem;
@@ -1395,7 +1401,7 @@ tr:hover {
 }
 .founder-info h5 {
     color: goldenrod;
-    font-family: Poppins, sans-serif;
+    font-family: Manrope;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 1.5rem;
@@ -1610,7 +1616,7 @@ tr:hover {
 .amount-due span {
     color: goldenrod;
     font-size: 1.2rem;
-    font-family: Bodoni Moda, serif;
+    font-family: Cormorant Garamond;
     margin-left: 5px;
 }
 
@@ -1635,7 +1641,7 @@ tr:hover {
     color: aliceblue;
     padding: 1rem 1.5rem;
     border-radius: 6px;
-    font-family: Poppins, sans-serif;
+    font-family: Manrope;
     font-size: 1rem;
     text-align: left;
     transition: var(--transition);
@@ -1678,7 +1684,7 @@ tr:hover {
     background: transparent;
     color: ivory;
     border: 1px solid ivory;
-    font-family: Poppins, sans-serif;
+    font-family: Manrope;
     font-size: 0.9rem;
     padding: 10px;
     transition: var(--transition);
@@ -1761,7 +1767,7 @@ tr:hover {
 
 .reviewer-name {
     font-weight: bold;
-    font-family: Bodoni Moda, serif;
+    font-family: Cormorant Garamond;
     color: goldenrod;
 }
 
@@ -1826,7 +1832,7 @@ tr:hover {
     background: goldenrod;
     color: var(--navy-blue-shade);
     border: none;
-    font-family: Poppins, sans-serif;
+    font-family: Manrope;
     font-size: 1rem;
     font-weight: 600;
     text-transform: uppercase;

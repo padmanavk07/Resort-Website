@@ -30,6 +30,16 @@ document.querySelectorAll('.fade-up').forEach(el => {
     observer.observe(el);
 });
 
+// // Active page link 
+
+const currentPage = window.location.pathname.split("/").pop();
+document.querySelectorAll(".page").forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+    }
+});
+
+
 // Sidebar functions for mobile
 function showSidebar() {
     const sidebar = document.querySelector('.side-bar');
