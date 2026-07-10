@@ -32,12 +32,12 @@ document.querySelectorAll('.fade-up').forEach(el => {
 
 // // Active page link 
 
-const currentPage = window.location.pathname.split("/").pop();
-document.querySelectorAll(".page").forEach(link => {
-    if (link.getAttribute("href") === currentPage) {
-        link.classList.add("active");
-    }
-});
+// const currentPage = window.location.pathname.split("/").pop();
+// document.querySelectorAll(".page").forEach(link => {
+//     if (link.getAttribute("href") == currentPage) {
+//         link.classList.add("active");
+//     }
+// });
 
 
 // Sidebar functions for mobile

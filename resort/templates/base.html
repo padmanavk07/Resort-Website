@@ -13,22 +13,21 @@
         <div class="nav-container">
             <a href="{{ url_for('home.index') }}" class="logo">RESORT NAME</a>
             <ul class="nav-links">
-                <li><a class="page" href="{{ url_for('home.index') }}">HOME</a></li>
-                <li><a class="page" href="{{ url_for('home.about') }}">ABOUT US</a></li>
-                <li><a class="page" href="{{ url_for('home.services') }}">SERVICES</a></li>
-                <li><a class="page" href="{{ url_for('home.gallery') }}">GALLERY</a></li>
-                <li><a class="page" href="{{ url_for('home.reviews') }}">REVIEWS</a></li>
-                <li><a class="page" href="{{ url_for('home.join') }}">CAREERS</a></li>
+                <li><a class="page {% if request.endpoint == 'home.index' %}active{% endif %}" href="{{ url_for('home.index') }}">HOME</a></li>
+                <li><a class="page {% if request.endpoint == 'home.about' %}active{% endif %}" href="{{ url_for('home.about') }}">ABOUT US</a></li>
+                <li><a class="page {% if request.endpoint == 'home.services' %}active{% endif %}" href="{{ url_for('home.services') }}">SERVICES</a></li>
+                <li><a class="page {% if request.endpoint == 'home.gallery' %}active{% endif %}" href="{{ url_for('home.gallery') }}">GALLERY</a></li>
+                <li><a class="page {% if request.endpoint == 'home.reviews' %}active{% endif %}" href="{{ url_for('home.reviews') }}">REVIEWS</a></li>
+                <li><a class="page {% if request.endpoint == 'home.join' %}active{% endif %}" href="{{ url_for('home.join') }}">CAREERS</a></li>
             </ul>
 
             <ul class="side-bar">
-                <li onclick=hideSidebar()><strong>×</strong></li>
-                <li><a class="page" href="{{ url_for('home.index') }}">HOME</a></li>
-                <li><a class="page" href="{{ url_for('home.about') }}">ABOUT US</a></li>
-                <li><a class="page" href="{{ url_for('home.services') }}">SERVICES</a></li>
-                <li><a class="page" href="{{ url_for('home.gallery') }}">GALLERY</a></li>
-                <li><a class="page" href="{{ url_for('home.reviews') }}">REVIEWS</a></li>
-                <li><a class="page" href="{{ url_for('home.join') }}">CAREERS</a></li>
+                <li><a class="page {% if request.endpoint == 'home.index' %}active{% endif %}" href="{{ url_for('home.index') }}">HOME</a></li>
+                <li><a class="page {% if request.endpoint == 'home.about' %}active{% endif %}" href="{{ url_for('home.about') }}">ABOUT US</a></li>
+                <li><a class="page {% if request.endpoint == 'home.services' %}active{% endif %}" href="{{ url_for('home.services') }}">SERVICES</a></li>
+                <li><a class="page {% if request.endpoint == 'home.gallery' %}active{% endif %}" href="{{ url_for('home.gallery') }}">GALLERY</a></li>
+                <li><a class="page {% if request.endpoint == 'home.reviews' %}active{% endif %}" href="{{ url_for('home.reviews') }}">REVIEWS</a></li>
+                <li><a class="page {% if request.endpoint == 'home.join' %}active{% endif %}" href="{{ url_for('home.join') }}">CAREERS</a></li>
             </ul>
 
             {% if user and user['admin'] %}
