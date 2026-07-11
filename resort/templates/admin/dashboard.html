@@ -57,20 +57,15 @@
             <div class="header-title">
                 <h1 id="header-title-text" class="serif">Dashboard Overview</h1>
             </div>
-            <div class="header-controls">
-                <div class="date-selector">
-                    <i class="far fa-calendar-alt"></i>
-                    <input type="date" id="admin-date">
-                </div>
-            </div>
+
             <div class="profile-container">
 
                 <div onclick="toggleProfileMenu()" class="profile-btn" id="profileBtn">
-                    <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Profile">
+                    <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profile">
                 </div>
                 <div class="profile-menu" id="profileMenu">
                     <div class="profile-header">
-                        <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="">
+                        <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="">
                         <h3>ADMIN</h3>
                         <p>admin@gmail.com</p>
                     </div>

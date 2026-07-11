@@ -467,7 +467,7 @@ footer {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: url(images/sample.jpeg) center/cover no-repeat;
+    background: url(images/slide-image-1.jpg) center/cover no-repeat;
     background-attachment: fixed;
 }
 .services-hero-content {
@@ -1257,7 +1257,7 @@ tr:hover {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: url("images/sample.jpeg") center/cover no-repeat;
+    background: url("images/slide-image-1.jpg") center/cover no-repeat;
     background-attachment: fixed;
 }
 .about-hero::before {

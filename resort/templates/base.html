@@ -36,13 +36,13 @@
                 <div class="profile-container">
     
                     <div onclick="toggleProfileMenu()" class="profile-btn" id="profileBtn">
-                        <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Profile">
+                        <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profile">
                     </div>
     
                     <div class="profile-menu" id="profileMenu">
     
                         <div class="profile-header">
-                            <img src="{{ url_for('static', filename='images/sample.jpeg') }}" alt="Profile">
+                            <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profile">
                             <h3>{{ user.username }}</h3>
                             <p>{{ user.email }}</p>
                         </div>
