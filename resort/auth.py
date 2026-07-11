@@ -99,6 +99,7 @@ def login_required(view):
     @functools.wraps(view)
     def wrapped_view(**kwargs):
         if g.user is None:
+            flash('You need to be logged in to access this page.', 'error')
             return redirect(url_for('home.index'))
         return view(**kwargs)
     
@@ -109,6 +110,7 @@ def admin_required(view):
     @functools.wraps(view)
     def wrapped_view(**kwargs):
         if g.user is None or not g.user['admin']:
+            flash('You need to be an admin to access this page.', 'error')
             return redirect(url_for('home.index'))
         return view(**kwargs)
     
